@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>
+		{% if page.title %}
+            {{ page.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}      
+	</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="{{ site.author.name }}">
+	<meta name="description" content="{{ page.description }}">
+	<meta name="keywords" content="{{ page.keywords | join: ',' }}" />
+	<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../themes/blog/blog.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+		<script src="{{ site.url }}{{ site.assets }}/js/ie8-responsive-file-warning.js">
+		</script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+		</script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+		</script>
+	<![endif]-->
+</head>
+
+<body id="backtop">
+	<div class="blog-masthead">
+		<div class="container">
+			<nav class="blog-nav">
+				{% for link in site.nav %}
+				{% assign active = nil %}
+				{% if page.url == link.url%}
+					{% assign active = 'active' %}
+				{% endif %}
+				
+				<a class="blog-nav-item {{ active }}" href="{{ link.url }}">
+					{{ link.text }}
+				</a>
+				{{ indicator }}
+				{% endfor %}
+			</nav>
+		</div>
+	</div>
+	<div class="container">
+		<div class="blog-header">
+			<h1 class="blog-title">
+				{{ site.title }}
+			</h1>
+			<p class="lead blog-description">
+				{{ site.subTitle }}
+			</p>
+		</div>
+		<div class="row">
+			<div class="col-sm-8 blog-main">
+				{{ content }}
+			</div>
+			<!--/.blog-main-->
+			<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+				<div class="sidebar-module sidebar-module-inset">
+					<h4>
+						关于
+					</h4>
+					<h5>{{ site.title }}</h5>
+					<p>{{ site.description }}</p>
+				</div>
+				<div class="sidebar-module">
+					<h4>
+						标签
+					</h4>
+					<ol class="list-unstyled">
+					{% for tag in site.tags %}
+						<li>
+							<a href="../tags.html#{{ tag[0] }}-ref">
+								{{ tag[0] }}
+							</a>
+						</li>
+					{% endfor %}
+					</ol>
+				</div>
+				<div class="sidebar-module">
+					<h4>
+						友链
+					</h4>
+					<ol class="list-unstyled">
+						<li>
+							<a href="#">
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Facebook
+							</a>
+						</li>
+					</ol>
+				</div>
+			</div>
+			<!--/.blog-sidebar-->
+		</div>
+		<!--/.row-->
+	</div>
+	<!--/.container-->
+	<div class="blog-footer">
+		<p>
+			Blog template built for
+			<a href="http://getbootstrap.com">
+				Bootstrap
+			</a>
+			by
+			<a href="https://twitter.com/mdo">
+				@mdo
+			</a>
+			.
+		</p>
+		<p>
+			<a href="#backtop">
+				Back to top
+			</a>
+		</p>
+	</div>
+	<!--Bootstrap core JavaScript==================================================-
+	-><!--Placed at the end of the document so the pages load faster-->
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js">
+	</script>
+	<script src="../assets/js/bootstrap.min.js">
+	</script>
+ 	<script src="../assets/js/docs.min.js">
+	</script>
+</body>
+</html>

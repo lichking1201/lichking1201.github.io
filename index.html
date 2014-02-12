@@ -1,0 +1,40 @@
+---
+layout: default
+title:
+description: 
+keywords: GitHub, Jekyll, css, html, javascript, design, geek
+---
+{% for rpost in paginator.posts %}
+<article class="blog-post">
+	<h2 class="blog-post-title">
+		<a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a>
+	</h2>
+	<p class="blog-post-meta">
+		<time pubdate="{{ rpost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ rpost.date | date_to_utc | date: "%Y-%m-%d" }}</time>&emsp;tags:
+		<a href="#">
+			{{ rpost.tags }}
+		</a>
+		<p class="blog-post-description">
+			{{ rpost.description }}
+		</p>
+	</p>
+	
+	<hr>
+	<div class="blog-post-content">
+		{{ rpost.content }}
+	</div>
+</article>
+{% endfor %}
+<ul class="pager">
+	<li>
+		<a href="#">
+			Previous
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			Next
+		</a>
+	</li>
+</ul>
+			
