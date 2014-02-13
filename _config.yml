@@ -1,0 +1,31 @@
+﻿#markdown: rdiscount
+markdown: redcarpet
+paginate: 8
+safe: false
+lsi: false
+pygments: false
+#作者
+author : 
+    name : lichen
+    link : 
+    img : 
+
+#站点基础配置
+title : Dragoon
+subTitle : This Blog was made made by Jekyll and chinese named 「龙骑」
+description : 这是lichking的个人博客，以Dragoon——龙骑兵命名。龙骑兵的历史可追溯到16世纪，意为骑马的火枪手，是世界上最早的机动步兵。上马行军，下马作战，兼具步骑兵的火力与机动性。这也正是我作为前端开发工程师的希冀，让designer与coder俱为一体。
+url : http://lichking1201.github.io
+feed : /atom.xml
+
+#菜单配置
+nav:
+  - text: 首页
+    url: /index.html
+  - text: 文章归档
+    url: /archive.html
+  - text: 标签
+    url: /tags.html
+  - text: 关于我
+    url: /about.html
+  - text: 博客源代码
+    url: https://github.com/pizn/pizn.github.com
