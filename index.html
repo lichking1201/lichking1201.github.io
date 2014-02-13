@@ -12,7 +12,7 @@ keywords: GitHub, Jekyll, css, html, javascript, design, geek
 	<p class="blog-post-meta">
 		<time pubdate="{{ rpost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ rpost.date | date_to_utc | date: "%Y-%m-%d" }}</time>&emsp;tags:
 		{% for tag in rpost.tags %}
-		<a href="#">
+		<a href="/tags.html#{{ tag }}-ref">
 			{{ tag }}
 		</a>
 		{% endfor %}
