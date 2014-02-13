@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 ﻿#markdown: rdiscount
 markdown: redcarpet
 paginate: 8
 safe: false
 lsi: false
 pygments: false
+=======
+﻿markdown: rdiscount
+paginate: 8
+safe: false
+
+>>>>>>> 32670a3220bc4ffea95ab4bd018a85957cb4792e
 #作者
 author : 
     name : lichen
