@@ -12,7 +12,7 @@ keywords: GitHub, Jekyll, css, html, javascript, design, geek
 	<p class="blog-post-meta">
 		<time pubdate="{{ rpost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ rpost.date | date_to_utc | date: "%Y-%m-%d" }}</time>&emsp;tags:
 		<a href="#">
-			{{ rpost.tags }}
+			{{ rpost.tags }}&emsp;
 		</a>
 		<p class="blog-post-description">
 			{{ rpost.description }}
@@ -20,21 +20,55 @@ keywords: GitHub, Jekyll, css, html, javascript, design, geek
 	</p>
 	
 	<hr>
+	
 	<div class="blog-post-content">
+	{% if rpost.content contains "<!--more-->" %}
+		{{ rpost.content | split:'<!--more-->' | first }}
+		<a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">rede more...</a>
+	{% else %}
 		{{ rpost.content }}
+	{% endif %}
 	</div>
 </article>
 {% endfor %}
+
 <ul class="pager">
+	{% if paginator.previous_page %} 
+		{% if paginator.previous_page == 1 %}
 	<li>
-		<a href="#">
-			Previous
+		<a href="/">
+			前一页
 		</a>
 	</li>
+		{% else %}
 	<li>
-		<a href="#">
-			Next
+		<a href="page{{paginator.previous_page}}/">
+			前一页
 		</a>
+	</li>
+		{% endif %}
+	{% else %}
+	<li class="disabled">
+		<a href="">
+			前一页
+		</a>
+	</li>
+	{% endif %}
+	{% if paginator.next_page %}
+	<li>
+		<a href="/page{{paginator.next_page}}/">
+			下一页
+		</a>
+	</li>
+	{% else if paginator.page == paginator.total_pages %}
+	<li class="disabled">
+		<a href="/page{{paginator.next_page}}/">
+			下一页
+		</a>
+	</li>
+	{% endif %}
+	<li class="right">
+		<em>第: {{paginator.page}} 页，共 {{paginator.total_pages}}页</em>
 	</li>
 </ul>
 			

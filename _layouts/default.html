@@ -15,9 +15,10 @@
 	<meta name="author" content="{{ site.author.name }}">
 	<meta name="description" content="{{ page.description }}">
 	<meta name="keywords" content="{{ page.keywords | join: ',' }}" />
-	<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-	<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../themes/blog/blog.css" rel="stylesheet">
+	<link rel="shortcut icon" href="{{site.url}}{{ site.asset }}/ico/favicon.ico">
+	<link href="{{site.url}}{{ site.asset }}/css/bootstrap.min.css" rel="stylesheet">
+	<link href="{{site.url}}{{ site.asset }}/css/prettify.css" rel="stylesheet">
+	<link href="{{site.url}}{{ site.theme }}/blog.css" rel="stylesheet">
 	<!--[if lt IE 9]>
 		<script src="{{ site.url }}{{ site.assets }}/js/ie8-responsive-file-warning.js">
 		</script>
@@ -114,15 +115,7 @@
 	<!--/.container-->
 	<div class="blog-footer">
 		<p>
-			Blog template built for
-			<a href="http://getbootstrap.com">
-				Bootstrap
-			</a>
-			by
-			<a href="https://twitter.com/mdo">
-				@mdo
-			</a>
-			.
+			© 2014 lichking. with Help from <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://getbootstrap.com">Twitter Bootstrap</a>.
 		</p>
 		<p>
 			<a href="#backtop">
@@ -134,9 +127,14 @@
 	-><!--Placed at the end of the document so the pages load faster-->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js">
 	</script>
-	<script src="../assets/js/bootstrap.min.js">
-	</script>
- 	<script src="../assets/js/docs.min.js">
-	</script>
+	<script src="{{site.url}}{{ site.asset }}/js/bootstrap.min.js"></script>
+	<script src="{{site.url}}{{ site.asset }}/js/prettify.js"></script>
+ 	<script src="{{site.url}}{{ site.asset }}/js/docs.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+			prettyPrint();
+		});
+	</script>   
 </body>
 </html>

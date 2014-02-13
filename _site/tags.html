@@ -13,11 +13,12 @@
 	<meta name="author" content="lichen">
 	<meta name="description" content="">
 	<meta name="keywords" content="GitHub, Jekyll, css, html, javascript, design, geek" />
-	<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-	<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../themes/blog/blog.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/css/prettify.css" rel="stylesheet">
+	<link href="/themes/blog/blog.css" rel="stylesheet">
 	<!--[if lt IE 9]>
-		<script src="http://lichking1201.github.io/js/ie8-responsive-file-warning.js">
+		<script src="/js/ie8-responsive-file-warning.js">
 		</script>
 	<![endif]-->
 	<!--[if lt IE 9]>
@@ -70,7 +71,7 @@
 				
 				
 				
-				<a class="blog-nav-item " href="https://github.com/pizn/pizn.github.com">
+				<a class="blog-nav-item " href="https://github.com/lichking1201/lichking1201.github.com">
 					博客源代码
 				</a>
 				
@@ -90,21 +91,24 @@
 		<div class="row">
 			<div class="col-sm-8 blog-main">
 				 
-  <h3 id="测试-ref">测试</h3>
+  <h3 id="生活-ref">生活</h3>
   <ul>
 	 
-	<li><a href="/2012/10/26/PNG-Loading.html">使用 PNG 图片制作动态 Loading</a></li>
-	 
-	<li><a href="/2012/06/12/some-solution-for-ie-hack.html">几个 IE 样式解决方案</a></li>
+	<li><a href="/2014/02/13/HelloWord.html">卷首语</a></li>
 	
   </ul>
  
-  <h3 id="test-ref">test</h3>
+  <h3 id="前端-ref">前端</h3>
   <ul>
 	 
-	<li><a href="/2012/10/26/PNG-Loading.html">使用 PNG 图片制作动态 Loading</a></li>
+	<li><a href="/2014/02/13/oydFpRule.html">东方永德前端开发规范</a></li>
+	
+  </ul>
+ 
+  <h3 id="文档-ref">文档</h3>
+  <ul>
 	 
-	<li><a href="/2012/06/12/some-solution-for-ie-hack.html">几个 IE 样式解决方案</a></li>
+	<li><a href="/2014/02/13/oydFpRule.html">东方永德前端开发规范</a></li>
 	
   </ul>
 
@@ -125,14 +129,20 @@
 					<ol class="list-unstyled">
 					
 						<li>
-							<a href="../tags.html#测试-ref">
-								测试
+							<a href="../tags.html#生活-ref">
+								生活
 							</a>
 						</li>
 					
 						<li>
-							<a href="../tags.html#test-ref">
-								test
+							<a href="../tags.html#前端-ref">
+								前端
+							</a>
+						</li>
+					
+						<li>
+							<a href="../tags.html#文档-ref">
+								文档
 							</a>
 						</li>
 					
@@ -168,15 +178,7 @@
 	<!--/.container-->
 	<div class="blog-footer">
 		<p>
-			Blog template built for
-			<a href="http://getbootstrap.com">
-				Bootstrap
-			</a>
-			by
-			<a href="https://twitter.com/mdo">
-				@mdo
-			</a>
-			.
+			© 2014 lichking. with Help from <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://getbootstrap.com">Twitter Bootstrap</a>.
 		</p>
 		<p>
 			<a href="#backtop">
@@ -188,9 +190,14 @@
 	-><!--Placed at the end of the document so the pages load faster-->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js">
 	</script>
-	<script src="../assets/js/bootstrap.min.js">
-	</script>
- 	<script src="../assets/js/docs.min.js">
-	</script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/prettify.js"></script>
+ 	<script src="/assets/js/docs.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+			prettyPrint();
+		});
+	</script>   
 </body>
 </html>
