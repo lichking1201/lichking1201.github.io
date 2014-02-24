@@ -34,18 +34,31 @@
 <body id="backtop">
 	<div class="blog-masthead">
 		<div class="container">
-			<nav class="blog-nav">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">
+					<span class="sr-only">导航</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			
+			
+			<nav class="collapse navbar-collapse blog-nav" id="nav">
+				<ul class="nav navbar-nav">
 				{% for link in site.nav %}
 				{% assign active = nil %}
 				{% if page.url == link.url%}
 					{% assign active = 'active' %}
 				{% endif %}
-				
-				<a class="blog-nav-item {{ active }}" href="{{ link.url }}">
-					{{ link.text }}
-				</a>
+					<li class="{{ active }}">
+						<a class="blog-nav-item" href="{{ link.url }}">
+							{{ link.text }}
+						</a>
+					</li>
 				{{ indicator }}
 				{% endfor %}
+				</ul>
 			</nav>
 		</div>
 	</div>

@@ -18,7 +18,8 @@ h6, .h6 {
   line-height:1.2;
   color: #333;
   margin-top: 0;
-  margin-bottom:25px
+  margin-top:30px;
+  margin-bottom:20px
 }
 
 a {
@@ -26,7 +27,7 @@ a {
     font-size: 100%;
 }
 hr{border-color:#C5C5C5}
-
+img{max-width:100%;margin:20px auto;display:block}
 
 /*
  * Masthead for nav
@@ -41,22 +42,32 @@ hr{border-color:#C5C5C5}
 .blog-nav {
 
 }
-.blog-nav-item {
+.nav>li>.blog-nav-item {
   position: relative;
   display: inline-block;
   padding: 10px;
   font-weight: 500;
   color: #cdddeb;
 }
-.blog-nav-item:hover,
-.blog-nav-item:focus {
+.nav>li>.blog-nav-item:hover,
+.nav>li>.blog-nav-item:focus {
+  background:transparent;
   color: #fff;
   text-decoration: none;
+}
+.navbar-toggle{
+	border-color:#cdddeb
+}
+.navbar-toggle:hover,.navbar-toggle:focus{
+	border-color:#FFF
+}
+.icon-bar{
+	background:#FFF
 }
 
 /* Active state gets a caret at the bottom */
 .blog-nav .active {
-  color: #fff;
+  color: #fff !important;
 }
 .blog-nav .active:after {
   position: absolute;
@@ -150,11 +161,12 @@ hr{border-color:#C5C5C5}
 .blog-post-content{margin: 20px 0;}
 .blog-post-content ul{margin-bottom: 25px;}
 .blog-post-content ol{margin-bottom: 25px;}
-.blog-post-content p{margin-bottom: 40px;}
-.blog-post-content p+ul{margin-top: -15px;}
-.blog-post-content p+ol{margin-top: -15px;}
+.blog-post-content p{margin-bottom: 20px;}
+.blog-post-content p+ul{margin-top: 0;}
+.blog-post-content p+ol{margin-top: 0;}
 .blog-post-content li{margin-bottom:5px;margin-left:15px}
-.blog-post-content p+pre{margin-bottom:40px;margin-top:-20px}
+.blog-post-content pre{margin-bottom:20px;}
+
 .blog-post-title {
   margin-bottom: 15px;
   font-size: 40px;

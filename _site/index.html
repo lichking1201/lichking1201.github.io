@@ -32,50 +32,67 @@
 <body id="backtop">
 	<div class="blog-masthead">
 		<div class="container">
-			<nav class="blog-nav">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">
+					<span class="sr-only">导航</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			
+			
+			<nav class="collapse navbar-collapse blog-nav" id="nav">
+				<ul class="nav navbar-nav">
 				
 				
 				
 					
 				
-				
-				<a class="blog-nav-item active" href="/index.html">
-					首页
-				</a>
-				
-				
-				
-				
-				
-				<a class="blog-nav-item " href="/archive.html">
-					文章归档
-				</a>
+					<li class="active">
+						<a class="blog-nav-item" href="/index.html">
+							首页
+						</a>
+					</li>
 				
 				
 				
 				
-				
-				<a class="blog-nav-item " href="/tags.html">
-					标签
-				</a>
-				
-				
-				
-				
-				
-				<a class="blog-nav-item " href="/about.html">
-					关于我
-				</a>
+					<li class="">
+						<a class="blog-nav-item" href="/archive.html">
+							文章归档
+						</a>
+					</li>
 				
 				
 				
 				
+					<li class="">
+						<a class="blog-nav-item" href="/tags.html">
+							标签
+						</a>
+					</li>
 				
-				<a class="blog-nav-item " href="https://github.com/lichking1201/lichking1201.github.io">
-					博客源代码
-				</a>
 				
 				
+				
+					<li class="">
+						<a class="blog-nav-item" href="/about.html">
+							关于我
+						</a>
+					</li>
+				
+				
+				
+				
+					<li class="">
+						<a class="blog-nav-item" href="https://github.com/lichking1201/lichking1201.github.io">
+							博客源代码
+						</a>
+					</li>
+				
+				
+				</ul>
 			</nav>
 		</div>
 	</div>
@@ -91,6 +108,56 @@
 		<div class="row">
 			<div class="col-sm-8 blog-main">
 				
+<article class="blog-post">
+	<h2 class="blog-post-title">
+		<a href="/2014/02/24/menu-aim.html" title="menu-aim.js分析" rel="bookmark">menu-aim.js分析</a>
+	</h2>
+	<p class="blog-post-meta">
+		<time pubdate="2014-02-24">2014-02-24</time>&emsp;tags:
+		
+		<a href="/tags.html#前端-ref">
+			前端
+		</a>
+		
+		<a href="/tags.html#js-ref">
+			js
+		</a>
+		
+		<p class="blog-post-description">
+			menu-aim.js的交互效果被广泛运用在淘宝、亚马逊、京东等电商网站的菜单上，体现的效果因为契合直觉仿如天生而不易被用户发觉。但重要性却犹如阿基里斯之踵一般：一旦缺失，就会极大影响用户操作菜单的用户体验。
+		</p>
+	</p>
+	
+	<hr>
+	
+	<div class="blog-post-content">
+	
+		<h3>0.楔子</h3>
+
+<p>开始分析前，先看两个现实的用户体验栗子：</p>
+
+<p><em>反面教材：<a href="http://www.zol.com/" title="中关村商城">中关村商城</a></em></p>
+
+<p>设想一个场景，家里想买个新音箱,买之前避免被坑要做个调查吧，看看参数对比下价格。思来想去，还是中关村在线比较靠谱。于是打开中关村在线首页，在首屏的菜单导航中一项一项划过查看，诶，「电脑外设」下面有个「音箱」栏目，OK，就是他了！</p>
+
+<p><img src="/resouse/img/2014-2-24-1.png" alt="示例二" /></p>
+
+<p>正如上图，确认了要指向的目标，相信正常人类<strong>第一反应</strong>都会是沿绿色箭头移动鼠标的吧？但是！</p>
+
+<p><img src="/resouse/img/2014-2-24-2.png" alt="示例二" /></p>
+
+<p>纳尼？！我的音箱呢？！怎么奇怪的东西弹出来了？！我要买的是音箱不是mp3mp4啊！好吧，鼠标回去再来次试试看，纳尼？！还是这样？！F**K，非要我用扭曲的红色路线不成？！摔！坑爹呢这用户体验！直接一点会死嘛会死吗？！</p>
+
+<p><em>正面教材：<a href="http://www.tmall.com/" title="天猫商城">天猫商城</a></em></p>
+
+<p>正面教材就不多说了，请自行体会什么是智能的交互体验。</p>
+
+
+		<a href="/2014/02/24/menu-aim.html" title="menu-aim.js分析" rel="bookmark">Read more...</a>
+	
+	</div>
+</article>
+
 <article class="blog-post">
 	<h2 class="blog-post-title">
 		<a href="/2014/02/13/oydFpRule.html" title="东方永德前端开发规范" rel="bookmark">东方永德前端开发规范</a>
@@ -221,6 +288,12 @@
 						<li>
 							<a href="../tags.html#文档-ref">
 								文档
+							</a>
+						</li>
+					
+						<li>
+							<a href="../tags.html#js-ref">
+								js
 							</a>
 						</li>
 					
