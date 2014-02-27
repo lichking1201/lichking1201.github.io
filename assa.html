@@ -9,7 +9,7 @@ keywords: HTML 前端开发入门 headfist
 <ul class="assa-list">
 	<li>
 		<span>{{ rpage.date | date_to_utc | date: '%Y-%m-%d' }}</span>
-		<a href="{{rpage.url}}">{{rpage.title}}</a>
+		<a href="{{rpage.url}}" target="_blank">{{rpage.title}}</a>
 	</li>
 </ul>
 {% endfor %}

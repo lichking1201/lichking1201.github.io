@@ -8,7 +8,7 @@ keywords: GitHub, Jekyll, css, html, javascript, design, geek
   <h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
   <ul>
 	{% for rpage in tag[1] %} 
-	<li><a href="{{rpage.url}}">{{rpage.title}}</a></li>
+	<li><a href="{{rpage.url}}" target="_blank">{{rpage.title}}</a></li>
 	{% endfor %}
   </ul>
 {% endfor %}
