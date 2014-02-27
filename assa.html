@@ -1,0 +1,15 @@
+---
+layout: page
+title:
+description: 
+keywords: HTML 前端开发入门 headfist
+---
+<h3>ASSA的Web世界旅行游记</h3>
+{% for rpage in site.categories.assa %} 
+<ul class="assa-list">
+	<li>
+		<span>{{ rpage.date | date_to_utc | date: '%Y-%m-%d' }}</span>
+		<a href="{{rpage.url}}">{{rpage.title}}</a>
+	</li>
+</ul>
+{% endfor %}

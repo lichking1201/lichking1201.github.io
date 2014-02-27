@@ -5,10 +5,145 @@
         <description>Dragoon - lichen</description>
         <link></link>
         <link></link>
-        <lastBuildDate>2014-02-24T15:48:48+08:00</lastBuildDate>
-        <pubDate>2014-02-24T15:48:48+08:00</pubDate>
+        <lastBuildDate>2014-02-27T11:31:07+08:00</lastBuildDate>
+        <pubDate>2014-02-27T11:31:07+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>HTML练习三</title>
+                <description>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;ASSA&#39;s&lt;/title&gt;
+		&lt;style type=&quot;text/css&quot;&gt;
+				body{
+							background-color:#efe8e8;
+							font-family:&quot;微软雅黑&quot;;
+							margin-left:20%;
+							margin-right:20%;
+							border:1px dotted #8f8f8f;
+							padding:10px 20px 10px 20px;
+							}
+				p{
+					color:#626262;
+					}
+				ol{
+					color:#626262;
+						}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;h1&gt;ASSA&#39;s world&lt;/h1&gt;
+		&lt;p&gt;&lt;em&gt;这是我的练习日记，记录下我的成长历程&lt;/em&gt;&lt;/p&gt;
+		&lt;p&gt;
+		&lt;img src=&quot;images/920_1.png&quot; alt=&quot;920界面&quot; width=&quot;200&quot; height=&quot;333&quot;&gt;
+		&lt;img src=&quot;images/920_2.png&quot; alt=&quot;920界面&quot; width=&quot;200&quot; height=&quot;333&quot;&gt;
+		&lt;/p&gt;
+		&lt;h2&gt;2014年02月26日，晚&lt;/h2&gt;
+		&lt;p&gt;当我认真学习html的时候，发现html还是挺有趣的，至少我这种一看学术类的书就头疼的人也能跟着head first一步步了解html并试着去写简单的网页了。现在我想在这个页面里把我到目前为止所学到的知识都体现出来。&lt;br&gt;
+		&lt;br&gt;
+		我以后想给自己做一个个人网站，展示自己的设计作品，让更多的人能够看到。所以现在我得好好安排一下网页的布局。&lt;br&gt;
+		&lt;/p&gt;
+		&lt;h3&gt;我的网页:&lt;/h3&gt;
+		&lt;p&gt;
+		&lt;ol&gt;
+		&lt;li&gt;logo和标题&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;左侧&lt;/strong&gt; 个人简介&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;右侧&lt;/strong&gt; 作品列表
+			&lt;ul&gt;
+			&lt;li&gt;网页设计&lt;/li&gt;
+			&lt;li&gt;平面设计&lt;/li&gt;
+			&lt;li&gt;图标设计&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;我的html学习日记&lt;/li&gt;
+		&lt;li&gt;底部链接到&lt;a href=&quot;http://user.qzone.qq.com/597145585&quot; target=&quot;_blank&quot; title=&quot;你能在这里看到生活中的我&quot;&gt;我的QQ空间&lt;/a&gt;，有兴趣的朋友能了解我更多。&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;/p&gt;
+		&lt;p&gt;等我学到更多的知识，我相信我的网页会更丰富多彩，《head first html和css》这本书真的很不错，&lt;q&gt;如果每个html设计人员都从这本书开始读，web世界会变得更加迷人。&lt;/q&gt;&lt;br&gt;
+		&lt;br&gt;
+		最后，我想说，920手机文本编辑器还是挺好用的嘛，坐车时间都能练练手，赞一个╯3╰
+		&lt;br&gt;
+		&lt;br&gt;
+———————————————————————————————ASSA——————————————————————————————
+		&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+
+
+
+
+
+
+</description>
+                <link>/assa/2014/02/27/hxt.html</link>
+                <guid>/assa/2014/02/27/hxt</guid>
+                <pubDate>2014-02-27T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>我的「大数据」挖掘</title>
+                <description>&lt;p&gt;&lt;em&gt;感谢RSS的作者&lt;a href=&quot;http://www.ifanr.com/234104&quot;&gt;Aaron Swartz&lt;/a&gt;，愿你在某个地方安息。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;作为一个重度信息强迫症患者来说，大量订阅RSS那是必然的。但人生如此短暂，一天只有可怜的24小时，刨掉工作、睡觉、吃饭、看(da)电(hui)影(ji)等等等等时间，余下的时间还不够刷知乎的。于是RSS那巨大的未读数字就犹如滔滔江水排山倒海连绵不绝看得我心惊胆颤不忍直视却又耐不住空虚焦虑和来自灵魂深处剧烈的强迫感不得已逐一翻开阅后标记已读这一切就蛋疼的好比看了一大段语句不通滥用成语还没有标点符号的小学生文字一般。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resouse/img/2014-2-25-0.png&quot; alt=&quot;鲜果客户端示例&quot; /&gt;
+一天几百的信息流，一周没开客户端，这辈子就都不想点开了。。。&lt;/p&gt;
+
+&lt;p&gt;真的是忍无可忍了啊，必须要找个办法缓解这个症状了啊，要不一直这样下去完全没办法当上技术经理，出任CTO，迎娶白富美，走上人生巅峰了啊。现在大数据分析这么流行，干脆我就通过分析只找出最热信息关注，这样放弃掉其他的也就比较心安理得了吧！虽然方法简单粗暴，自动化低，但都病入膏肓了就先用着吧&lt;/p&gt;
+
+&lt;p&gt;初步设想的解决方案很简单：前端截取信息标题字符串（元数据）==》提交给分词分析系统处理==》根据算法筛选最高权重词频的词汇==》根据筛选结果汇总文章链接，推送==》End&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+
+&lt;h3&gt;通过鲜果RSS客户端截取标题字符串&lt;/h3&gt;
+
+&lt;pre&gt;
+var inv;
+var t = false;
+var txt = &quot;&quot;;
+var ary = [];
+
+function tra(){
+    var len = jQuery(&#39;#itemList_footer_filp&#39;).children(&quot;a&quot;).length;
+    if(jQuery(&#39;#itemList_footer_filp&#39;).children(&quot;a&quot;).eq(len-1).text() == &quot;下一页&quot;){
+        t = false;
+        jQuery(&#39;#itemList_footer_filp&#39;).children(&quot;a&quot;).eq(len-1).click();
+    }else{t = true}
+    
+    jQuery(&quot;.item_title_mode&quot;).each(function(){txt += jQuery(this).find(&quot;.title&quot;).text() + &quot;|&quot;;});
+    ary = txt.replace(/^\|+|\|+$/g, &quot;&quot;).split(&quot;|&quot;)
+}
+inv = window.setInterval(&quot;if(!t){tra()}else{console.log(txt);window.clearInterval(inv)}&quot;,2000);
+&lt;/pre&gt;
+
+
+&lt;p&gt;方法很笨，实现起来也非常龟速，就是利用鲜果客户端采集源，然后对源列表不停发送请求迭代截取的字符串，直到没有&quot;下一页&quot;为止。&lt;/p&gt;
+
+&lt;h3&gt;中文分词与词频分词&lt;/h3&gt;
+
+&lt;p&gt;第二步是将结果提交给中文分析系统，当前方法是把获取的字符串手动复制粘贴到这个&lt;a href=&quot;http://www.xunsearch.com/scws/demo/v48.php&quot;&gt;开源的在线分析系统&lt;/a&gt;中，然后第三部分词和筛选就完全交给它了。这两个步骤以后将开源系统研究透了再说自动化吧！&lt;/p&gt;
+
+&lt;p&gt;到这里我们粗略的热点信息大概就都出来了，比如下图，分析的是2014-2-23到2014-2-25间，一千条来自新浪、网易、搜狐、凤凰的焦点新闻标题，最终词频结果——&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resouse/img/2014-2-25-1.jpg&quot; alt=&quot;新闻时事词频&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;排除掉「国内」「体育」「科技」「财经」等新浪用来标示频道的干扰信息，可以看出：我们的几个门户网站编辑们对国际新闻更关注，动荡的乌克兰和奇葩的朝鲜是当前关注的热点，扫黄打非虽然脱离了风口浪尖但依然坚挺（东莞请挺住）。而类似「中央」「官员」「反腐」「改革」这些是一贯政治热词，也可能是为两会预热。&lt;/p&gt;
+
+&lt;p&gt;看完了时事新闻，再来关心下IT弄潮，这次的源信息主要来自36Kr，爱范儿，虎嗅，Engadget中文等等主流IT媒体，可以看出google、腾讯、三星、苹果是这些媒体舆论的宠儿。移动、智能、手机和视频是谈论最多的话题，Facebook因为收购whatsApp，两者词频接近一目了然。诺基亚显然处于低谷，小米倒是很意外被提到的次数还不如诺基亚，有些意外，可能最近小米比较低调的原因吧。图中被涂红的「大众」可不是那个das auto，而是「大众点评」因为分词的缘故被分开了。看来这几个媒体对腾讯还真是重视，没少写腾讯收购大众点评股份的文章。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resouse/img/2014-2-25-2.jpg&quot; alt=&quot;IT媒体词频&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这么一分析，痛快多了啊，不考虑时效性，作用比上百篇文章一点一点翻找重点还是强多了。今天先分析这么多吧，样本还是太少，大数据分析肯定是很有意思的，以后有时间一定要多研究，对于信息强迫症，坚决不弃疗。&lt;/p&gt;
+
+&lt;p&gt;PS：抓取&lt;a href=&quot;http://www.toutiao.com/news_hot/&quot;&gt;今日头条&lt;/a&gt;的热点新闻效果应该也挺好，可惜不能被鲜果收录订阅，要再研究研究了。&lt;/p&gt;
+</description>
+                <link>/2014/02/25/myBigdata.html</link>
+                <guid>/2014/02/25/myBigdata</guid>
+                <pubDate>2014-02-25T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>menu-aim.js分析</title>
@@ -132,13 +267,117 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 
 &lt;p&gt;相关文章：&lt;a href=&quot;http://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown&quot;&gt;http://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;原版下载链接：&lt;a href=&quot;https://github.com/kamens/jQuery-menu-aim&quot;&gt;https://github.com/kamens/jQuery-menu-aim&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原版链接：&lt;a href=&quot;https://github.com/kamens/jQuery-menu-aim&quot;&gt;https://github.com/kamens/jQuery-menu-aim&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;个人注释版Demo：&lt;a href=&quot;/resouse/attach/jQuery-menu-aim-master.rar&quot;&gt;为性能着想，jquery.menu-aim.js350行将$(document)修改为了具体的钩子元素。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;个人注释版Demo下载：&lt;a href=&quot;/resouse/attach/jQuery-menu-aim-master.rar&quot;&gt;为性能着想，jquery.menu-aim.js350行将$(document)修改为了具体的钩子元素。&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>/2014/02/24/menu-aim.html</link>
                 <guid>/2014/02/24/menu-aim</guid>
                 <pubDate>2014-02-24T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>HTML练习二</title>
+                <description>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;ASSA&#39;s&lt;/title&gt;
+		&lt;style type=&quot;text/css&quot;&gt;
+				body{
+						background-color:white;
+						margin-left:20%;
+						margin-right:20%;
+						font-family:&quot;微软雅黑&quot;;
+						color:#800000;
+						}
+				p{
+					color:black;}
+				strong{
+						color:red;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;h1&gt;&lt;img src=&quot;images/A_1.jpg&quot;&gt;ASSA的Web世界&lt;/h1&gt;
+		&lt;p&gt;&lt;em&gt;这是我学习《head first HTML与CSS》的小练习，在这里记录我一步步的成长！&lt;/em&gt;&lt;/p&gt;
+		&lt;img src=&quot;images/html5.jpg&quot;&gt;
+		&lt;h2&gt;2014年02月22日，16点&lt;/h2&gt;
+		&lt;p&gt;今天把之前学习的知识复习了一下，还学习了追踪文件的路径，修复破坏的链接，知道了&quot;..&quot;表示父文件夹。&lt;/p&gt;
+		
+		&lt;p&gt;&lt;strong&gt;这里是我之前的两次练习:&lt;/strong&gt;&lt;/p&gt;
+		&lt;a href=&quot;胡晓彤20140219.html&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;images/20140219.jpg&quot;&gt;&lt;/a&gt;
+		&lt;a href=&quot;胡晓彤20140220.html&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;images/20140220.jpg&quot;&gt;&lt;/a&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</description>
+                <link>/assa/2014/02/22/hxt.html</link>
+                <guid>/assa/2014/02/22/hxt</guid>
+                <pubDate>2014-02-22T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>HTML练习一</title>
+                <description>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;胡晓彤20140220&lt;/title&gt;
+		&lt;style type=&quot;text/css&quot;&gt;
+				body{
+						background-color:#FFEFD5;
+						margin-left:20%;
+						margin-right:20%;
+						border:1px dotted #F08080;
+						padding:10px 20px 10px 20px;
+						font-family:&quot;微软雅黑&quot;;
+						color:#800000;
+					}
+				p{
+					color:black;
+					font-weight:normal;
+					}
+				strong{
+					color:red;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;h1&gt;2014年02月20日，晚10点30分&lt;/h1&gt;
+		&lt;a href=&quot;images/big/1.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;images/1.jpg&quot;&gt;&lt;/a&gt;
+		&lt;p&gt;今天学习了&lt;strong&gt;a元素&lt;/strong&gt; , 使用a元素创建一个超文本链接，链接到另一个web页面，比如&lt;a href =&quot;http://www.baidu.com&quot; target=&quot;_blank&quot;&gt;百度一下，你就知道&lt;/a&gt;。href属性告诉浏览器链接的目标文件，src属性指定一个img标记显示的图像文件名，assa!&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</description>
+                <link>/assa/2014/02/20/hxt.html</link>
+                <guid>/assa/2014/02/20/hxt</guid>
+                <pubDate>2014-02-20T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>初识HTML</title>
+                <description>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;胡晓彤20140219&lt;/title&gt;
+		&lt;style type=&quot;text/css&quot;&gt;
+				body{
+						background-color:#FFEFD5;
+						margin-left:20%;
+						margin-right:20%;
+						border:1px dotted #F08080;
+						padding:10px 20px 10px 20px;
+						font-family:&quot;微软雅黑&quot;;
+						color:#800000;
+					}
+				p{
+					color:black;
+					}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;h1&gt;2014年02月19日，晚8点&lt;/h1&gt;
+		&lt;p&gt;今天初步认识了html，title是页签上显示的内容，style是样式，body是内容，h1是标题，p是段落。
+				跟着书学还是挺上手的嘛，多谢&lt;em&gt;二狗子老师&lt;/em&gt; 耐心教导，嘻嘻。希望自己能早日做一个漂亮的网页，assa!&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</description>
+                <link>/assa/2014/02/19/hxt.html</link>
+                <guid>/assa/2014/02/19/hxt</guid>
+                <pubDate>2014-02-19T00:00:00+08:00</pubDate>
         </item>
 
         <item>

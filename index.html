@@ -5,6 +5,7 @@ description:
 keywords: GitHub, Jekyll, css, html, javascript, design, geek
 ---
 {% for rpost in paginator.posts %}
+	{% if rpost.categories[0] != "assa" %}
 <article class="blog-post">
 	<h2 class="blog-post-title">
 		<a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a>
@@ -15,21 +16,22 @@ keywords: GitHub, Jekyll, css, html, javascript, design, geek
 		<a href="/tags.html#{{ tag }}-ref">{{ tag }}</a>&ensp;
 		{% endfor %}
 		<p class="blog-post-description">
-			{{ rpost.description }}
+		{{ rpost.description }}
 		</p>
 	</p>
 	
 	<hr>
 	
 	<div class="blog-post-content">
-	{% if rpost.content contains "<!--more-->" %}
-		{{ rpost.content | split:'<!--more-->' | first }}
+		{% if rpost.content contains "<!--more-->" %}
+			{{ rpost.content | split:'<!--more-->' | first }}
 		<a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">Read more...</a>
-	{% else %}
-		{{ rpost.content }}
-	{% endif %}
+		{% else %}
+			{{ rpost.content }}
+		{% endif %}
 	</div>
 </article>
+	{% endif %}
 {% endfor %}
 
 <ul class="pager">
