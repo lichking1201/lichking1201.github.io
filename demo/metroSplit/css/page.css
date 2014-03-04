@@ -1,0 +1,155 @@
+﻿@charset "utf-8";
+/*CSS reset*/
+body{color:#000;background:#FFF;font-size:14px;font-family:"微软雅黑","宋体";line-height:22px;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,textarea,p,blockquote,th,td,form{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:0;vertical-align: middle;}
+address,caption,th{font-style:normal;font-weight:normal;}
+em,strong{color:#f00;font-style:normal;}
+ol,ul{list-style:none;}caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,textarea,select{*font-size:100%;}
+em{font-weight:bold}
+.clear{clear: both;content: "";display: block;height: 0;overflow: hidden;visibility: hidden;}
+/*浮动父元素插入类清浮动*/
+.clearfix:after {clear: both;content: "";display: block;    height: 0;overflow: hidden;visibility: hidden;}
+.clearfix {*zoom:1;}
+a:hover {color: #f00}	/* 鼠标移动到链接上红色 */
+a{text-decoration:none;} /*去超链接下划线*/
+
+
+.header{width:100%;height:106px;background:url(../images/hbg.png) repeat-x;}
+.logo{display:block;width:590px;position:absolute;top:0;left:0;height:106px}
+.userIcon{position:absolute;right:3%;top:30px}
+.userIcon a{float:left;display:block;height:24px;line-height:22px;padding:0 20px;color:#FFF}
+.userIcon a:hover{color:#F6DD21 !important}
+.userIcon a.item1{background:url(../images/headicon_04.png) no-repeat left center}
+.userIcon a.item2{background:url(../images/headicon_06.png) no-repeat left center}
+
+body{background:#f0f0f0}
+
+.mainWrap{margin:20px auto;position:relative;width:96%;min-height:724px;overflow-y:visible}
+.main{margin-right:370px;overflow:hidden}
+.sidebar{width:357px;position:absolute;top:0;right:0;}
+.listBlk{overflow:hidden}
+.listBlk .left{float:left;width:49%}
+.listBlk .right{float:right;width:49%}
+.sidebar .left{float:left;}
+.sidebar .right{float:right;}
+
+.box{margin-top:20px}
+.hed{height:40px;line-height:40px;border-right:1px solid #0085d6;border-left:1px solid #0085d6;background:url(../images/tbg_18.png) repeat-x;}
+h3.t{background:url(../images/tbg_35.png) no-repeat 7px top;display:block;padding-left:22px;font-size:16px;color:#FFF;text-indent:18px}
+.content{border-bottom:1px solid #bbbbbb;border-right:1px solid #bbbbbb;border-left:1px solid #bbbbbb;background:#FFF;padding:10px}
+.list li{line-height:30px;background:url(../images/listbg.png) no-repeat 5px center;padding-left:20px}
+.list li a{color:#6b6b6b}
+.list li a:hover{color:red}
+
+.btnblk{width:176px;height:176px;overflow:hidden;cursor:pointer;margin-bottom:5px;position:relative}
+.btnblk.s1 .metroSplit-main,.btnblk.s1 a{background:#27ae60}
+.btnblk.s2 .metroSplit-main,.btnblk.s2 a{background:#c05b95}
+.btnblk.s3{background:#00b4d8}
+.btnblk.s4{background:#a557e6}
+.btnblk.s5 .metroSplit-main,.btnblk.s5 a{background:#2c89ee}
+.btnblk.s6 .metroSplit-main,.btnblk.s6 a{background:#e58e05}
+.btnblk.s7{background:#e74c3c}
+.btnblk.s8{background:#5294bd}
+
+.metroSplit-main{border-radius:5px;position:absolute;top:0;left:0;width:176px;height:176px;text-align:center;z-index:9}
+.metroSplit-main img{padding-top:25px;}
+.metroSplit-main h4{font-size:18px;color:#FFF;text-align:center}
+
+.metroSplit-sub{position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;opacity:1;background:transparent}
+.metroSplit-sub ul{height:100%;width:100%;display:block;}
+.metroSplit-sub li{float:left;display:block;width:100%;height:100%;background:transparent;position:relative;}
+.metroSplit-sub a{position:absolute;top:0;bottom:0;left:0;right:0;color:#000;font-size:16px;display:block;text-align:center;background:#27ae60;}
+.metroSplit-sub a:hover{background:rgba(0,0,0,0.1);background:#FFF \9\0;color:#000 \9;color:#FFF \9\0;*background:#FFF;*color:#000}
+
+.backdrop{position:fixed;left:0;top:0;bottom:0;right:0;z-index:999;}
+.footer{height:48px;line-height:20px;font-size:12px;width:100%;background:#0278c1;text-align:center;color:#FFF;padding-top:7px}
+
+/*焦点图*/
+.focus img {
+    width: 100%;
+	height:100%;
+}
+
+.focus {
+    width: 100%;
+    position: relative;
+	overflow:hidden
+}
+
+.focus ul {
+    position: absolute;
+	overflow:hidden
+}
+
+.focus ul li {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+
+.focus ul li div {
+    position: absolute;
+    overflow: hidden;
+}
+
+/* .focus .btnBg {
+    position: absolute;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    background: #000 \9;
+    filter:alpha(opacity=70)
+}
+
+.focusTitle {
+    color: #FFF;
+    text-indent: 5px
+} */
+
+.focus .btn {
+    position: absolute;
+    width: 99%;
+    height: 32px;
+    left: 0;
+    bottom: 0;
+    text-align: right;
+}
+
+.focus .btn span {
+    display: inline-block;
+    _display: inline;
+    _zoom: 1;
+    width: 20px;
+    height: 34px;
+    _font-size: 0;
+    cursor: pointer;
+    background: url("../images/focusBtn2.png") no-repeat center;
+    _background: url("../images/focusBtn2Ie6.png") no-repeat center;
+}
+
+.focus .btn span.on {
+    background: url("../images/focusBtn1.png") no-repeat center;
+    _background: url("../images/focusBtn1Ie6.png") no-repeat center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -97,13 +97,9 @@
 	<div class="container blog-post">
 		<div class="row">
 			<div class="col-sm-8 blog-main">
-				<h2 class="blog-post-title">
+				<h2 class="post-title">
 					东方永德前端开发规范
 				</h2>
-				<p class="blog-post-description">
-					无规矩不成方圆。望有心人多提宝贵意见，拜谢！
-				</p>
-				<hr />
 				<div class="blog-post-content">
 					<h3>关于本规范</h3>
 
@@ -443,14 +439,14 @@ root/
 
 				</div>
 				<hr />
-				<p class="blog-post-meta">
-					<time pubdate="2014-02-13">2014-02-13</time>&emsp;tags:
-					
+				<p class="post-meta">
+					tags:
 					
 					<a href="/tags.html#前端-ref">前端</a>&ensp;
 					
 					<a href="/tags.html#文档-ref">文档</a>&ensp;
 					
+					&emsp;<time pubdate="2014-02-13">2014-02-13</time>
 				</p>
 				<!-- Duoshuo Comment BEGIN -->
 				<div class="ds-thread"></div>
@@ -476,21 +472,29 @@ root/
 					</h4>
 					<ol class="list-unstyled">
 						
-						<li><a href="/assa/2014/02/27/hxt.html">HTML练习三</a></li>
+						
+						
 						
 						<li><a href="/2014/02/25/myBigdata.html">我的「大数据」挖掘</a></li>
 						
+						
+						
 						<li><a href="/2014/02/24/menu-aim.html">menu-aim.js分析</a></li>
 						
-						<li><a href="/assa/2014/02/22/hxt.html">HTML练习二</a></li>
 						
-						<li><a href="/assa/2014/02/20/hxt.html">HTML练习一</a></li>
 						
-						<li><a href="/assa/2014/02/19/hxt.html">初识HTML</a></li>
+						
+						
+						
+						
+						
 						
 						<li><a href="/2014/02/13/oydFpRule.html">东方永德前端开发规范</a></li>
 						
+						
+						
 						<li><a href="/2014/02/13/HelloWord.html">卷首语</a></li>
+						
 						
 					</ol>
 				</div>
@@ -576,6 +580,10 @@ root/
 		$(document).ready(function() {
 			$('pre').addClass('prettyprint');
 			prettyPrint();
+			
+			$('a[href^="http"]').each(function(){
+				$(this).attr("target","_blank")
+			})
 		});
 	</script>   
 </body>

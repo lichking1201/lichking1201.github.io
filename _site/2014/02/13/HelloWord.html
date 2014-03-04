@@ -97,13 +97,9 @@
 	<div class="container blog-post">
 		<div class="row">
 			<div class="col-sm-8 blog-main">
-				<h2 class="blog-post-title">
+				<h2 class="post-title">
 					卷首语
 				</h2>
-				<p class="blog-post-description">
-					人生苦短如白驹过隙，若无些雪泥鸿爪，老来徒增伤悲。
-				</p>
-				<hr />
 				<div class="blog-post-content">
 					<p>历时3天，终于依靠Jekyll在GitHub上成功搭建了第一个Web小窝，期望我能在忙碌的时候，将技术的总结，生活的感悟记录下来。</p>
 
@@ -111,12 +107,12 @@
 
 				</div>
 				<hr />
-				<p class="blog-post-meta">
-					<time pubdate="2014-02-13">2014-02-13</time>&emsp;tags:
-					
+				<p class="post-meta">
+					tags:
 					
 					<a href="/tags.html#生活-ref">生活</a>&ensp;
 					
+					&emsp;<time pubdate="2014-02-13">2014-02-13</time>
 				</p>
 				<!-- Duoshuo Comment BEGIN -->
 				<div class="ds-thread"></div>
@@ -142,21 +138,29 @@
 					</h4>
 					<ol class="list-unstyled">
 						
-						<li><a href="/assa/2014/02/27/hxt.html">HTML练习三</a></li>
+						
+						
 						
 						<li><a href="/2014/02/25/myBigdata.html">我的「大数据」挖掘</a></li>
 						
+						
+						
 						<li><a href="/2014/02/24/menu-aim.html">menu-aim.js分析</a></li>
 						
-						<li><a href="/assa/2014/02/22/hxt.html">HTML练习二</a></li>
 						
-						<li><a href="/assa/2014/02/20/hxt.html">HTML练习一</a></li>
 						
-						<li><a href="/assa/2014/02/19/hxt.html">初识HTML</a></li>
+						
+						
+						
+						
+						
 						
 						<li><a href="/2014/02/13/oydFpRule.html">东方永德前端开发规范</a></li>
 						
+						
+						
 						<li><a href="/2014/02/13/HelloWord.html">卷首语</a></li>
+						
 						
 					</ol>
 				</div>
@@ -242,6 +246,10 @@
 		$(document).ready(function() {
 			$('pre').addClass('prettyprint');
 			prettyPrint();
+			
+			$('a[href^="http"]').each(function(){
+				$(this).attr("target","_blank")
+			})
 		});
 	</script>   
 </body>

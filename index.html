@@ -10,30 +10,31 @@ keywords: GitHub, Jekyll, css, html, javascript, design, geek
 	<h2 class="blog-post-title">
 		<a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a>
 	</h2>
-	<p class="blog-post-meta">
-		<time pubdate="{{ rpost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ rpost.date | date_to_utc | date: "%Y-%m-%d" }}</time>&emsp;tags:
+	<p class="blog-post-description">
+		{{ rpost.description }}
+	</p>
+</article>
+	{% endif %}
+{% endfor %}
+<!--
+<p class="blog-post-meta">
+		tags:
 		{% for tag in rpost.tags %}
 		<a href="/tags.html#{{ tag }}-ref">{{ tag }}</a>&ensp;
 		{% endfor %}
-		<p class="blog-post-description">
-		{{ rpost.description }}
-		</p>
+		&emsp;<time pubdate="{{ rpost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ rpost.date | date_to_utc | date: "%Y-%m-%d" }}</time>
 	</p>
-	
-	<hr>
-	
+-->
+<!-- 
+备用，文章缩略
 	<div class="blog-post-content">
-		{% if rpost.content contains "<!--more-->" %}
-			{{ rpost.content | split:'<!--more-->' | first }}
+		{% if rpost.content contains "<!--more--" %}
+			{{ rpost.content | split:'<!--more--' | first }}
 		<a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">Read more...</a>
 		{% else %}
 			{{ rpost.content }}
 		{% endif %}
-	</div>
-</article>
-	{% endif %}
-{% endfor %}
-
+	</div> -->
 <ul class="pager">
 	{% if paginator.previous_page %} 
 		{% if paginator.previous_page == 1 %}
@@ -70,7 +71,7 @@ keywords: GitHub, Jekyll, css, html, javascript, design, geek
 	</li>
 	{% endif %}
 	<li class="right">
-		<em>第: {{paginator.page}} 页，共 {{paginator.total_pages}}页</em>
+		<em>第 {{paginator.page}} 页，共 {{paginator.total_pages}}页</em>
 	</li>
 </ul>
 			

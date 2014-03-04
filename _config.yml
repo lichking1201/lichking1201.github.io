@@ -12,7 +12,7 @@ author :
 
 #站点基础配置
 title : Dragoon
-subTitle : This Blog was made made by Jekyll and chinese named 「龙骑」
+subTitle : This Blog was made by Jekyll and chinese named 「龙骑」
 description : 这是lichking的个人博客，以Dragoon——龙骑兵命名。龙骑兵的历史可追溯到16世纪，意为骑马的火枪手，是世界上最早的机动步兵。上马行军，下马作战，兼具步骑兵的火力与机动性。这也正是我作为前端开发工程师的希冀，让designer与coder俱为一体。
 feed : /atom.xml
 asset : /assets

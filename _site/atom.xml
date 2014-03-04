@@ -4,7 +4,7 @@
  <title>Dragoon</title>
  <link href="/" rel="self"/>
  <link href=""/>
- <updated>2014-02-27T11:31:07+08:00</updated>
+ <updated>2014-02-28T16:39:29+08:00</updated>
  <id></id>
  <author>
    <name>lichen</name>
@@ -42,8 +42,8 @@
 		&lt;h1&gt;ASSA&#39;s world&lt;/h1&gt;
 		&lt;p&gt;&lt;em&gt;这是我的练习日记，记录下我的成长历程&lt;/em&gt;&lt;/p&gt;
 		&lt;p&gt;
-		&lt;img src=&quot;images/920_1.png&quot; alt=&quot;920界面&quot; width=&quot;200&quot; height=&quot;333&quot;&gt;
-		&lt;img src=&quot;images/920_2.png&quot; alt=&quot;920界面&quot; width=&quot;200&quot; height=&quot;333&quot;&gt;
+		&lt;img src=&quot;/resouse/images/920_1.png&quot; alt=&quot;920界面&quot; width=&quot;200&quot; height=&quot;333&quot;&gt;
+		&lt;img src=&quot;/resouse/images/920_2.png&quot; alt=&quot;920界面&quot; width=&quot;200&quot; height=&quot;333&quot;&gt;
 		&lt;/p&gt;
 		&lt;h2&gt;2014年02月26日，晚&lt;/h2&gt;
 		&lt;p&gt;当我认真学习html的时候，发现html还是挺有趣的，至少我这种一看学术类的书就头疼的人也能跟着head first一步步了解html并试着去写简单的网页了。现在我想在这个页面里把我到目前为止所学到的知识都体现出来。&lt;br&gt;
@@ -302,15 +302,15 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 	&lt;/head&gt;
 	
 	&lt;body&gt;
-		&lt;h1&gt;&lt;img src=&quot;images/A_1.jpg&quot;&gt;ASSA的Web世界&lt;/h1&gt;
+		&lt;h1&gt;&lt;img src=&quot;/resouse/images/A_1.jpg&quot;&gt;ASSA的Web世界&lt;/h1&gt;
 		&lt;p&gt;&lt;em&gt;这是我学习《head first HTML与CSS》的小练习，在这里记录我一步步的成长！&lt;/em&gt;&lt;/p&gt;
-		&lt;img src=&quot;images/html5.jpg&quot;&gt;
+		&lt;img src=&quot;/resouse/images/html5.jpg&quot;&gt;
 		&lt;h2&gt;2014年02月22日，16点&lt;/h2&gt;
 		&lt;p&gt;今天把之前学习的知识复习了一下，还学习了追踪文件的路径，修复破坏的链接，知道了&quot;..&quot;表示父文件夹。&lt;/p&gt;
 		
 		&lt;p&gt;&lt;strong&gt;这里是我之前的两次练习:&lt;/strong&gt;&lt;/p&gt;
-		&lt;a href=&quot;胡晓彤20140219.html&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;images/20140219.jpg&quot;&gt;&lt;/a&gt;
-		&lt;a href=&quot;胡晓彤20140220.html&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;images/20140220.jpg&quot;&gt;&lt;/a&gt;
+		&lt;a href=&quot;http://lichking1201.github.io/assa/2014/02/19/hxt.html&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/resouse/images/20140219.jpg&quot;&gt;&lt;/a&gt;
+		&lt;a href=&quot;http://lichking1201.github.io/assa/2014/02/20/hxt.html&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/resouse/images/20140220.jpg&quot;&gt;&lt;/a&gt;
 	&lt;/body&gt;
 &lt;/html&gt;</content>
  </entry>
@@ -344,7 +344,7 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 	
 	&lt;body&gt;
 		&lt;h1&gt;2014年02月20日，晚10点30分&lt;/h1&gt;
-		&lt;a href=&quot;images/big/1.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;images/1.jpg&quot;&gt;&lt;/a&gt;
+		&lt;a href=&quot;/resouse/images/big/1.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/resouse/images/1.jpg&quot;&gt;&lt;/a&gt;
 		&lt;p&gt;今天学习了&lt;strong&gt;a元素&lt;/strong&gt; , 使用a元素创建一个超文本链接，链接到另一个web页面，比如&lt;a href =&quot;http://www.baidu.com&quot; target=&quot;_blank&quot;&gt;百度一下，你就知道&lt;/a&gt;。href属性告诉浏览器链接的目标文件，src属性指定一个img标记显示的图像文件名，assa!&lt;/p&gt;
 	&lt;/body&gt;
 &lt;/html&gt;</content>

@@ -97,13 +97,9 @@
 	<div class="container blog-post">
 		<div class="row">
 			<div class="col-sm-8 blog-main">
-				<h2 class="blog-post-title">
+				<h2 class="post-title">
 					menu-aim.js分析
 				</h2>
-				<p class="blog-post-description">
-					menu-aim.js的交互效果被广泛运用在淘宝、亚马逊、京东等电商网站的菜单上，体现的效果因为契合直觉仿如天生而不易被用户发觉。但重要性却犹如阿基里斯之踵一般：一旦缺失，就会极大影响用户操作菜单的用户体验。
-				</p>
-				<hr />
 				<div class="blog-post-content">
 					<h3>0.楔子</h3>
 
@@ -231,14 +227,14 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 
 				</div>
 				<hr />
-				<p class="blog-post-meta">
-					<time pubdate="2014-02-24">2014-02-24</time>&emsp;tags:
-					
+				<p class="post-meta">
+					tags:
 					
 					<a href="/tags.html#前端-ref">前端</a>&ensp;
 					
 					<a href="/tags.html#js-ref">js</a>&ensp;
 					
+					&emsp;<time pubdate="2014-02-24">2014-02-24</time>
 				</p>
 				<!-- Duoshuo Comment BEGIN -->
 				<div class="ds-thread"></div>
@@ -264,21 +260,29 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 					</h4>
 					<ol class="list-unstyled">
 						
-						<li><a href="/assa/2014/02/27/hxt.html">HTML练习三</a></li>
+						
+						
 						
 						<li><a href="/2014/02/25/myBigdata.html">我的「大数据」挖掘</a></li>
 						
+						
+						
 						<li><a href="/2014/02/24/menu-aim.html">menu-aim.js分析</a></li>
 						
-						<li><a href="/assa/2014/02/22/hxt.html">HTML练习二</a></li>
 						
-						<li><a href="/assa/2014/02/20/hxt.html">HTML练习一</a></li>
 						
-						<li><a href="/assa/2014/02/19/hxt.html">初识HTML</a></li>
+						
+						
+						
+						
+						
 						
 						<li><a href="/2014/02/13/oydFpRule.html">东方永德前端开发规范</a></li>
 						
+						
+						
 						<li><a href="/2014/02/13/HelloWord.html">卷首语</a></li>
+						
 						
 					</ol>
 				</div>
@@ -364,6 +368,10 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 		$(document).ready(function() {
 			$('pre').addClass('prettyprint');
 			prettyPrint();
+			
+			$('a[href^="http"]').each(function(){
+				$(this).attr("target","_blank")
+			})
 		});
 	</script>   
 </body>
