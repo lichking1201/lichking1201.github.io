@@ -196,7 +196,6 @@ function frame () {
 	if (trackOffsetX < 0) trackOffsetX = 0;
 	if (trackOffsetY > track.h - dNode.height) trackOffsetY = track.h - dNode.height;
 	if (trackOffsetY < 0) trackOffsetY = 0;
-	document.getElementById("console").innerHTML = car.y - dNode.height / 2;
 
 	// 赛车相对窗口的位置
 	var rX = car.x - trackOffsetX,
