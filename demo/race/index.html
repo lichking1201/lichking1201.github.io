@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Race</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link rel="stylesheet" href="../bower_components/normalize/normalize.css">
+		<link rel="stylesheet" href="style.css">
+		<script>function keyHandler () { }</script>
+	</head>
+	<body>
+		<div id="start" class="btn" ontouchstart="keyHandler(event,this)" ontouchend="keyHandler(event,this)">开始</div>
+		<div id="ctrLeft" class="ctr" ontouchstart="keyHandler(event,this)" ontouchend="keyHandler(event,this)"></div>
+		<div id="ctrRight" class="ctr" ontouchstart="keyHandler(event,this)" ontouchend="keyHandler(event,this)"></div>
+		<div id="container">
+			<canvas id="raceTrack" width="1500" height="800" class="border canvas"></canvas>
+			<div class="statsContainer">
+				速度: <span id="speed" class="b">0.00</span> px/f <br>
+				用时: <span id="time" class="b">0.00</span> s <br>
+				圈用时: <span id="lapTime" class="b">0.00</span> s <br>
+				最快用时: <span id="fastlapTime" class="b">0.00</span> s <br>
+				<span id="console"></span>
+			</div>
+			<div id="statsContainer" style="display: none;">
+				<div class="border box">
+						Speed: <span id="speed" class="b">0.00</span> px/f <br>
+						Time: <span id="time" class="b">0.00</span> s <br>
+						Lap time <span id="lapTime" class="b">0.00</span> s <br>
+						Nr. of laps: <span id="nrLaps" class="b">0</span> <br>
+						<hr>
+						Lap times: <ol id="lapTimes" class="lapList"></ol>
+				</div>
+				<div class="border box">
+					Car: <select name="selectCar" onchange=""><option value="car1">Capsule</option></select><br>
+					Track: <select name="selectTrack" onchange="selectTrack();"></select>
+				</div>
+				<div class="border box">
+					FPS: <span id="fps"></span>
+				</div>
+			</div>
+		</div>
+		<div id="trackContainer" class="hidden"><img id="track"><img id="hiddenTrack" class="hidden"><canvas id="hiddenCanvas" width="750" height="500" class="hidden"></canvas></div>
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src='race.js'></script>
+		<script>
+			//$("#container").height(screen.height)
+		</script>
+	</body>
+</html>
