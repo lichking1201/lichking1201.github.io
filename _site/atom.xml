@@ -4,7 +4,7 @@
  <title>Dragoon</title>
  <link href="/" rel="self"/>
  <link href=""/>
- <updated>2014-11-01T14:06:39+08:00</updated>
+ <updated>2014-11-05T01:10:13+08:00</updated>
  <id></id>
  <author>
    <name>lichen</name>
@@ -13,67 +13,109 @@
 
  
  <entry>
-   <title>Javascript模式 笔记（二） —— 对象与函数的编码模式</title>
+   <title>简历</title>
+   <link href="/2014/11/04/resume.html"/>
+   <updated>2014-11-04T00:00:00+08:00</updated>
+   <id>/2014/11/04/resume</id>
+   <content type="html">&lt;h3 id=&quot;section&quot;&gt;基本信息&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;姓名：李晨&lt;/li&gt;
+  &lt;li&gt;毕业院校：华中科技大学2012本科&lt;/li&gt;
+  &lt;li&gt;所学专业：信息安全&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;专业技能&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;熟练使用 HTML、CSS 像素级实现页面原型&lt;/li&gt;
+  &lt;li&gt;熟悉 Sass、Compass 高效优雅的组织样式&lt;/li&gt;
+  &lt;li&gt;掌握 Javascript 及 JQuery 实现高性能的动态页面效果&lt;/li&gt;
+  &lt;li&gt;较丰富的移动Web开发经验，熟练运用CSS3、HTML5的新特性&lt;/li&gt;
+  &lt;li&gt;掌握 Ajax 及 JSON，可以熟练处理页面数据及展示逻辑&lt;/li&gt;
+  &lt;li&gt;熟悉前端 MVC 模式，使用 Backbone、underscore 更好的组织前端代码&lt;/li&gt;
+  &lt;li&gt;了解并运用过 Yeoman、F.I.S、grunt 等前端构建工具，工程化前端开发流程&lt;/li&gt;
+  &lt;li&gt;熟悉git及svn代码管理&lt;/li&gt;
+  &lt;li&gt;使用过BootStrap JQueryUI GMU 等UI框架，能够依据项目快速本地化&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;工作履历&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;section-3&quot;&gt;2014.3 - 今 绿野网&lt;/h4&gt;
+
+    &lt;p&gt;前端开发工程师  主要负责lvye.com的移动端及部分PC端Web页面的构建。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;section-4&quot;&gt;2012.7 - 2014.3 东方永德&lt;/h4&gt;
+
+    &lt;p&gt;前端开发工程师  负责两个新闻资讯网站及若干Web应用系统的前端开发&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;section-5&quot;&gt;2011.12 - 2012.7 新浪网&lt;/h4&gt;
+
+    &lt;p&gt;二次开发工程师  使用Perl脚本对静态页二次开发并做上线的测试、部署。 &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;项目经验&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;绿野网前端梳理 引入F.I.S框架 Sass + Compass 开发方式；建立移动端基础规范，栅格结构，模块及组件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.lvye.com/lottery&quot;&gt;绿野旅行刮刮乐&lt;/a&gt; 跨桌面、移动两端；MVC模式，Backbone组织代码&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.lvye.com&quot;&gt;绿野旅行移动Web&lt;/a&gt; 移动端整站；GMU框架&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;绿野网微信活动 微信端 JSON+前端模板渲染&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.lvye.cn&quot;&gt;绿野网社区首页&lt;/a&gt; 首页 Yeoman + Sass&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.lvye.com/trip/2881/&quot;&gt;绿野旅行&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://keypark.org/&quot;&gt;开园国际&lt;/a&gt; 整站&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://artnews.fotosay.com/Orgin/index.shtml&quot;&gt;图说天下&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;[]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-7&quot;&gt;个人项目&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://lichking1201.github.io&quot;&gt;个人博客&lt;/a&gt; jekyll+bootstrap+github&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://lichking1201.github.io/demo/race/&quot;&gt;赛车小游戏&lt;/a&gt; html5+canvas&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;&quot;&gt;Web调查系统&lt;/a&gt; 离线WebAPP&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://lichking1201.github.io/demo/metroSplit/&quot;&gt;磁铁菜单&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Backbone 学习</title>
    <link href="/2014/11/01/learn-backbone.html"/>
    <updated>2014-11-01T00:00:00+08:00</updated>
    <id>/2014/11/01/learn-backbone</id>
-   <content type="html">&lt;h2 id=&quot;section&quot;&gt;字面量和构造函数&lt;/h2&gt;
+   <content type="html">&lt;h2 id=&quot;section&quot;&gt;模型&lt;/h2&gt;
 
-&lt;p&gt;在Javascript中可以使用字面量(Literal notation)模式，这种方法更为准确，也更富有表现力，并且在对象定义中更不容易出错。为此，我们应避免使用构造函数，更建议使用字面量的方法。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;对象字面量&lt;/h3&gt;
-
-&lt;p&gt;关键词：键-值对（key-value pari）哈希表；属性(property)；方法(method)&lt;/p&gt;
-
-&lt;p&gt;空对象添加法示例&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  // 开始时定义一个空对象
-  var dog = {};
-  
-  // 添加属性方法
-  dog.name = &quot;foo dog&quot;;
-  dog.getName = function(){
-     return dog.name;
-  }
-
-  // 完全删除属性/方法
-  delete dog.name;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;创建对象初始化法示例&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  var dog = {
-     name: &quot;foo dog&quot;,
-     getName: function(){
-        return this.name  
-     }
-  };
-
-  // 反模式，使用内置构造函数
-  var dog = new Object();
-  dog.name = &quot;bad dog&quot;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;与构造函数相比，使用字面量表示法的优点除了字符更少，另一个原因是他强调了该对象仅是一个可变哈希映射，而不是从对象中提取的属性或者方法。此外，字面量法被创造时并没有作用于解析。使用构造函数创造某同名局部变量时，解释器需要从调用Object()的位置开始一直向上查询作用域链，直到发现全局object构造函数。&lt;/p&gt;
-
-&lt;p&gt;构造函数的一个“特性”是object构造函数仅接受一个参数，并且还依赖传递的值，该Object()可能委派另一个内置构造函数来创建对象，并返回了一个并非期望的不同对象。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  // 反模式
-  var o = new Object();
-  console.log(o.constrctor === Object); // true
-  
-  var o = new Object(1);
-  console.log(o.constrctor === Number); // true
-  console.log(o.toFixed(2)) // &quot;1.00&quot;
-  
-  var o = new Object(&quot;n&quot;);
-  console.log(o.constrctor === String); // true
-  // 一般对象没有此方法，但字符串对象都有
-  console.log(typeof o.substring) // &quot;function&quot;
-  
-  var o = new Object(true);
-  console.log(o.constrctor === Boolean); // true
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;模型是保存应用程序数据的地方。可以把模型想象为对应用程序原始数据的精心设计的抽象，&lt;/p&gt;
 
 </content>
  </entry>
