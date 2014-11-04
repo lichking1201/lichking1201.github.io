@@ -4,13 +4,500 @@
  <title>Dragoon</title>
  <link href="/" rel="self"/>
  <link href=""/>
- <updated>2014-02-28T16:39:29+08:00</updated>
+ <updated>2014-11-01T14:06:39+08:00</updated>
  <id></id>
  <author>
    <name>lichen</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Javascript模式 笔记（二） —— 对象与函数的编码模式</title>
+   <link href="/2014/11/01/learn-backbone.html"/>
+   <updated>2014-11-01T00:00:00+08:00</updated>
+   <id>/2014/11/01/learn-backbone</id>
+   <content type="html">&lt;h2 id=&quot;section&quot;&gt;字面量和构造函数&lt;/h2&gt;
+
+&lt;p&gt;在Javascript中可以使用字面量(Literal notation)模式，这种方法更为准确，也更富有表现力，并且在对象定义中更不容易出错。为此，我们应避免使用构造函数，更建议使用字面量的方法。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;对象字面量&lt;/h3&gt;
+
+&lt;p&gt;关键词：键-值对（key-value pari）哈希表；属性(property)；方法(method)&lt;/p&gt;
+
+&lt;p&gt;空对象添加法示例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  // 开始时定义一个空对象
+  var dog = {};
+  
+  // 添加属性方法
+  dog.name = &quot;foo dog&quot;;
+  dog.getName = function(){
+     return dog.name;
+  }
+
+  // 完全删除属性/方法
+  delete dog.name;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;创建对象初始化法示例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  var dog = {
+     name: &quot;foo dog&quot;,
+     getName: function(){
+        return this.name  
+     }
+  };
+
+  // 反模式，使用内置构造函数
+  var dog = new Object();
+  dog.name = &quot;bad dog&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;与构造函数相比，使用字面量表示法的优点除了字符更少，另一个原因是他强调了该对象仅是一个可变哈希映射，而不是从对象中提取的属性或者方法。此外，字面量法被创造时并没有作用于解析。使用构造函数创造某同名局部变量时，解释器需要从调用Object()的位置开始一直向上查询作用域链，直到发现全局object构造函数。&lt;/p&gt;
+
+&lt;p&gt;构造函数的一个“特性”是object构造函数仅接受一个参数，并且还依赖传递的值，该Object()可能委派另一个内置构造函数来创建对象，并返回了一个并非期望的不同对象。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  // 反模式
+  var o = new Object();
+  console.log(o.constrctor === Object); // true
+  
+  var o = new Object(1);
+  console.log(o.constrctor === Number); // true
+  console.log(o.toFixed(2)) // &quot;1.00&quot;
+  
+  var o = new Object(&quot;n&quot;);
+  console.log(o.constrctor === String); // true
+  // 一般对象没有此方法，但字符串对象都有
+  console.log(typeof o.substring) // &quot;function&quot;
+  
+  var o = new Object(true);
+  console.log(o.constrctor === Boolean); // true
+&lt;/code&gt;&lt;/pre&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>系统学习Javascript</title>
+   <link href="/2014/10/16/learningJs.html"/>
+   <updated>2014-10-16T00:00:00+08:00</updated>
+   <id>/2014/10/16/learningJs</id>
+   <content type="html">&lt;p&gt;平时翻书，很多东西当时懂了，一撇而过最多不够写个Demo，大致有个模糊记忆便罢了。做项目时候遇到知识点了，想不起来，再现查资料。这样导致知识点愈发分散，记忆也趋于混乱。
+其实JS是一门很有“个性”的语言，使用起来太过灵活又有非常多的框架、模式，如果没有深入学习他的原理机制，碰到问题的时候很容易脱线。
+这也是我打算系统的、深入的学习Javascript的动力了。&lt;/p&gt;
+
+&lt;p&gt;以下，便是系统学习的提纲了：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Javascript 基础&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;作用域：闭包、this、环境上下文等等&lt;/li&gt;
+      &lt;li&gt;面向对象概念&lt;/li&gt;
+      &lt;li&gt;函数&lt;/li&gt;
+      &lt;li&gt;事件机制&lt;/li&gt;
+      &lt;li&gt;正则匹配应用&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Javascript 关联特性&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;JSON&lt;/li&gt;
+      &lt;li&gt;跨域与JSONP&lt;/li&gt;
+      &lt;li&gt;加载机制&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Javascript 框架与模块化&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;模块化概念&lt;/li&gt;
+      &lt;li&gt;框架工具&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Javascript 设计模式&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;模式概念&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;零散的知识点&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;兼容性&lt;/li&gt;
+      &lt;li&gt;原生API&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;其他&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;算法与数据结构——Javascript描述&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;nodeJS&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以上，便是关于js的一切&lt;/p&gt;
+
+&lt;p&gt;学习参考：&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Javascript模式 笔记（二） —— 对象与函数的编码模式</title>
+   <link href="/2014/10/11/js-patterns-1.html"/>
+   <updated>2014-10-11T00:00:00+08:00</updated>
+   <id>/2014/10/11/js-patterns-1</id>
+   <content type="html">&lt;h2 id=&quot;section&quot;&gt;字面量和构造函数&lt;/h2&gt;
+
+&lt;p&gt;在Javascript中可以使用字面量(Literal notation)模式，这种方法更为准确，也更富有表现力，并且在对象定义中更不容易出错。为此，我们应避免使用构造函数，更建议使用字面量的方法。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;对象字面量&lt;/h3&gt;
+
+&lt;p&gt;关键词：键-值对（key-value pari）哈希表；属性(property)；方法(method)&lt;/p&gt;
+
+&lt;p&gt;空对象添加法示例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  // 开始时定义一个空对象
+  var dog = {};
+  
+  // 添加属性方法
+  dog.name = &quot;foo dog&quot;;
+  dog.getName = function(){
+     return dog.name;
+  }
+
+  // 完全删除属性/方法
+  delete dog.name;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;创建对象初始化法示例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  var dog = {
+     name: &quot;foo dog&quot;,
+     getName: function(){
+        return this.name  
+     }
+  };
+
+  // 反模式，使用内置构造函数
+  var dog = new Object();
+  dog.name = &quot;bad dog&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;与构造函数相比，使用字面量表示法的优点除了字符更少，另一个原因是他强调了该对象仅是一个可变哈希映射，而不是从对象中提取的属性或者方法。此外，字面量法被创造时并没有作用于解析。使用构造函数创造某同名局部变量时，解释器需要从调用Object()的位置开始一直向上查询作用域链，直到发现全局object构造函数。&lt;/p&gt;
+
+&lt;p&gt;构造函数的一个“特性”是object构造函数仅接受一个参数，并且还依赖传递的值，该Object()可能委派另一个内置构造函数来创建对象，并返回了一个并非期望的不同对象。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  // 反模式
+  var o = new Object();
+  console.log(o.constrctor === Object); // true
+  
+  var o = new Object(1);
+  console.log(o.constrctor === Number); // true
+  console.log(o.toFixed(2)) // &quot;1.00&quot;
+  
+  var o = new Object(&quot;n&quot;);
+  console.log(o.constrctor === String); // true
+  // 一般对象没有此方法，但字符串对象都有
+  console.log(typeof o.substring) // &quot;function&quot;
+  
+  var o = new Object(true);
+  console.log(o.constrctor === Boolean); // true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当传递给Object()构造函数的值是动态的，并且直到运行时才能确定其类型时，Object()构造函数的这种行为可能会导致意想不到的后果。因此，总的还说，不要new构造函数，相反应该使用更为简单、可靠的对象字面量模式。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;自定义构造函数&lt;/h3&gt;
+&lt;p&gt;除内置构造函数和对象字面量模式外，还可以使用自己的构造函数来创建对象&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  var Person = function(name){
+     // 使用对象字面量模式创建一个新对象
+     //var this = {}
+     this.name = name;
+     this.say = function(){
+        return &quot;我是&quot; + this.name;
+     }
+
+     // return this
+  }
+
+  var lich = new Person(&quot;dragoon&quot;)
+  lich.say() //&quot;我是dragoon&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当以new操作符调用构造函数时，函数内部会发生以下情况（上方源码注释部分为模拟）：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;创建一个空对象，并且this变量引用了该对象，同时还继承了该函数的原型。&lt;/li&gt;
+  &lt;li&gt;属性和方法加入到this引用的对象中。&lt;/li&gt;
+  &lt;li&gt;新建的对象由this所引用，并且最后隐式的返回this&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Javascript模式 笔记（一） —— 概述及基础</title>
+   <link href="/2014/10/11/js-patterns-.html"/>
+   <updated>2014-10-11T00:00:00+08:00</updated>
+   <id>/2014/10/11/js-patterns-</id>
+   <content type="html">&lt;h2 id=&quot;section&quot;&gt;概述&lt;/h2&gt;
+&lt;p&gt;本书主要涉及三种模式&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;设计模式&lt;/li&gt;
+  &lt;li&gt;编码模式&lt;/li&gt;
+  &lt;li&gt;反模式&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;基本概念&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;面向对象：&lt;/p&gt;
+
+    &lt;p&gt;对象仅仅是一个容器，该容器包含了命名的属性、键-值对的列表。这里面的属性可以是函数（函数对象），这种情况下我们称其为方法。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;没有类：&lt;/p&gt;
+
+    &lt;p&gt;即构造函数，不称呼“类”，会引起误解；尽量多的使用对象组合，而不是使用类的继承&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;原型（prototypes）：&lt;/p&gt;
+
+    &lt;p&gt;原型是一个对象，并且创建的每一个都会自动获取一个Prototypes属性，该属性指向一个空对象。该对象几乎等同于采用对象字面量或Object()创建的对象，区别在于它的constructor属性指向了所创建的函数，而不是指向内置的Object()函数。每一个函数都有Prototype属性&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ECMAscript5 ：&lt;/p&gt;
+
+    &lt;p&gt;使用use strict严格模式&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;基本技巧&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;编写可维护的代码&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;阅读性良好&lt;/li&gt;
+      &lt;li&gt;具有一致性&lt;/li&gt;
+      &lt;li&gt;预见性&lt;/li&gt;
+      &lt;li&gt;看起来如同一个人编写&lt;/li&gt;
+      &lt;li&gt;有文档&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;尽量少使用全局变量&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;注意避免隐式创建：var a=b=0 //反模式
+应使用var a,b; a=b=0;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;变量释放时的副作用&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;使用delete撤销变量时，var创建的全局变量无法被删除，隐式创建的可以删除
+表明隐含全局变量严格来讲不是真正的变量，而是全局对象属性。属性可以通过delete操作符删除，但变量不可以&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  var global_var = 1;
+  global_novar = 2; //反模式
+  (function(){
+     global_fromfunc = 3 //反模式
+  })();
+
+  delete global_val; //false
+  delete global_novar; //true
+  delete global_fromfunc; //true
+
+  typeof global_var; //number
+  typeof global_novar; //undefined
+  typeof global_fromfunc; //undefined
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;访问全局变量&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;单一var模式&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;变量提升&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;函数任意地方声明多个变量，效果都等同于函数顶部声明。同一作用域下，先使用，再声明，亦可。&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;代码处理上分两个阶段，第一，这个阶段创建变量、函数声明及形参。这是解析和进入上、下文的阶段。第二个阶段是代码运行时执行过程，创建函数表达和不合格标识符（未定义变量）。但为了实际使用的目的，我们采纳了“提升”的概念，这个概念并没有在ECMAScript标准中定义，但却经常用来表述这种情形。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;for循环&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;遍历HTML容器对象(HTMLColltion)时，非常耗时，缓存长度可以极大优化。&lt;/li&gt;
+      &lt;li&gt;i--递减遍历，因为同0比较比同数组长度比较速度更快。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;for-in循环&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;也被成为枚举，用来遍历非数组对象。&lt;em&gt;不推荐遍历数组&lt;/em&gt;，因为当该数组对象被自定义函数扩大后，可能导致逻辑上的错误。&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;使用hasOwnProperty()过滤原型方法&lt;/p&gt;
+
+        &lt;pre&gt;&lt;code&gt;var man = {
+   age: 25,
+   handsome: true,
+   heads: 1
+};
+
+// 将一个方法添加到所有对象，那么枚举对象时，就可以过滤掉此方法，有效避免命名冲突。
+if(typeOf Object.prototype.clone = &quot;undefined&quot;){
+   Object.prototype.clone = function(){};
+}
+
+for(var i in man){
+   if(man.hasOwnpropotype(i)){
+      console.log(i, &quot;:&quot; , man[i])
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;不要增加内置的原型（为Object(),Array(),Function()等）&lt;/p&gt;
+
+    &lt;p&gt;严重影响到可维护性，所以除以下例外，不要添加。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;基于未来，提前定义如ECMAScript6的方法。&lt;/li&gt;
+      &lt;li&gt;为兼容性而添加的&lt;/li&gt;
+      &lt;li&gt;详细文档记录下来的&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;如遇到以上情况，可采用如下模式为原型添加自定义的方法：&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  if(typeof Object.prototype.myMethod !== &#39;function&#39;){
+     Object.prototype.myMethod = function(){}
+  }
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Switch模式&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;每个case 和 switch 纵向排列对齐&lt;/li&gt;
+      &lt;li&gt;每个case语句中使用代码缩进&lt;/li&gt;
+      &lt;li&gt;每个case语句结尾有一个明确的break语句&lt;/li&gt;
+      &lt;li&gt;使用default作为结束，给出默认结果&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;示例&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  var inspect_me = 0,
+      result = &#39;&#39;;
+
+  switch(inspect_me){
+  case 0:
+     result = &quot;zero&quot;;
+     break;
+  case 1:
+     result = &quot;one&quot;;
+     break;
+  default:
+     result = &quot;unknown&quot;;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;避免使用隐式类型转换&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;避免是使用eval()&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用ParseInt()&lt;/p&gt;
+
+    &lt;p&gt;ECMAScript3 0开始的字符串会被当成8进制，ECMAScript5 则不会。为避免不一致性和未预期的结果，每次都制定进制参数。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;编码约定&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;命名约定&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;构造函数首字母大写+驼峰&lt;/li&gt;
+      &lt;li&gt;全部大写变量约定程序声明周期中不可改变&lt;/li&gt;
+      &lt;li&gt;下划线结尾，表明私有变量&lt;/li&gt;
+      &lt;li&gt;使用一个下划线前缀表示受保护属性，使用两个下划线表示私有属性&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;编写注释&lt;/p&gt;
+
+    &lt;p&gt;通常有必要对所有的函数、函数参数、返回值和其他有趣或不同寻常的算法和技术都用文档记录下来。设想注释就是未来代码读者的一个提示，只需阅读注释就能明白代码中有哪些函数和函数名。&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;最重要的习惯，也是最难遵循的习惯就是不断更新注释，因为过期注释可能会误导阅读者，这比没有注释还要可怕。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;编写API文档&lt;/p&gt;
+
+    &lt;p&gt;自动生成API文档的工具：JSDoc Toolkit 和 YUIDoc。
+步骤如下：
+编写特殊格式的代码块 ==》运行工具解析代码和注释 ==》 发布工具解析的结果，大多以HTML发布。&lt;/p&gt;
+
+    &lt;p&gt;使用特殊标签：&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  /**
+   * @tag value
+   */
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;举例：&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  /**
+   * 翻转一个字符串
+   * 
+   * @param   {String} 输入需要翻转的字符串
+   * @return  {String} 翻转后的字符串
+   *
+   */
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;通常：
+@namespace;@class;@method;@param;@return;@constructor;@propety;@type&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;编写可读性强的代码&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;同行互查&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;正式发布时精简代码&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;运行JSLint&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>HTML练习三</title>
@@ -98,13 +585,9 @@
 
 &lt;p&gt;真的是忍无可忍了啊，必须要找个办法缓解这个症状了啊，要不一直这样下去完全没办法当上技术经理，出任CTO，迎娶白富美，走上人生巅峰了啊。现在大数据分析这么流行，干脆我就通过分析只找出最热信息关注，这样放弃掉其他的也就比较心安理得了吧！虽然方法简单粗暴，自动化低，但都病入膏肓了就先用着吧&lt;/p&gt;
 
-&lt;p&gt;初步设想的解决方案很简单：前端截取信息标题字符串（元数据）==》提交给分词分析系统处理==》根据算法筛选最高权重词频的词汇==》根据筛选结果汇总文章链接，推送==》End&lt;/p&gt;
-
+&lt;p&gt;初步设想的解决方案很简单：前端截取信息标题字符串（元数据）==》提交给分词分析系统处理==》根据算法筛选最高权重词频的词汇==》根据筛选结果汇总文章链接，推送==》End
 &lt;!--more--&gt;
-
-
-&lt;h3&gt;通过鲜果RSS客户端截取标题字符串&lt;/h3&gt;
-
+###通过鲜果RSS客户端截取标题字符串&lt;/p&gt;
 &lt;pre&gt;
 var inv;
 var t = false;
@@ -112,23 +595,21 @@ var txt = &quot;&quot;;
 var ary = [];
 
 function tra(){
-    var len = jQuery(&#39;#itemList_footer_filp&#39;).children(&quot;a&quot;).length;
-    if(jQuery(&#39;#itemList_footer_filp&#39;).children(&quot;a&quot;).eq(len-1).text() == &quot;下一页&quot;){
-        t = false;
-        jQuery(&#39;#itemList_footer_filp&#39;).children(&quot;a&quot;).eq(len-1).click();
-    }else{t = true}
-    
-    jQuery(&quot;.item_title_mode&quot;).each(function(){txt += jQuery(this).find(&quot;.title&quot;).text() + &quot;|&quot;;});
-    ary = txt.replace(/^\|+|\|+$/g, &quot;&quot;).split(&quot;|&quot;)
+	var len = jQuery(&#39;#itemList_footer_filp&#39;).children(&quot;a&quot;).length;
+	if(jQuery(&#39;#itemList_footer_filp&#39;).children(&quot;a&quot;).eq(len-1).text() == &quot;下一页&quot;){
+		t = false;
+		jQuery(&#39;#itemList_footer_filp&#39;).children(&quot;a&quot;).eq(len-1).click();
+	}else{t = true}
+	
+	jQuery(&quot;.item_title_mode&quot;).each(function(){txt += jQuery(this).find(&quot;.title&quot;).text() + &quot;|&quot;;});
+	ary = txt.replace(/^\|+|\|+$/g, &quot;&quot;).split(&quot;|&quot;)
 }
 inv = window.setInterval(&quot;if(!t){tra()}else{console.log(txt);window.clearInterval(inv)}&quot;,2000);
 &lt;/pre&gt;
 
+&lt;p&gt;方法很笨，实现起来也非常龟速，就是利用鲜果客户端采集源，然后对源列表不停发送请求迭代截取的字符串，直到没有”下一页”为止。&lt;/p&gt;
 
-&lt;p&gt;方法很笨，实现起来也非常龟速，就是利用鲜果客户端采集源，然后对源列表不停发送请求迭代截取的字符串，直到没有&quot;下一页&quot;为止。&lt;/p&gt;
-
-&lt;h3&gt;中文分词与词频分词&lt;/h3&gt;
-
+&lt;h3 id=&quot;section&quot;&gt;中文分词与词频分词&lt;/h3&gt;
 &lt;p&gt;第二步是将结果提交给中文分析系统，当前方法是把获取的字符串手动复制粘贴到这个&lt;a href=&quot;http://www.xunsearch.com/scws/demo/v48.php&quot;&gt;开源的在线分析系统&lt;/a&gt;中，然后第三部分词和筛选就完全交给它了。这两个步骤以后将开源系统研究透了再说自动化吧！&lt;/p&gt;
 
 &lt;p&gt;到这里我们粗略的热点信息大概就都出来了，比如下图，分析的是2014-2-23到2014-2-25间，一千条来自新浪、网易、搜狐、凤凰的焦点新闻标题，最终词频结果——&lt;/p&gt;
@@ -144,6 +625,7 @@ inv = window.setInterval(&quot;if(!t){tra()}else{console.log(txt);window.clearIn
 &lt;p&gt;这么一分析，痛快多了啊，不考虑时效性，作用比上百篇文章一点一点翻找重点还是强多了。今天先分析这么多吧，样本还是太少，大数据分析肯定是很有意思的，以后有时间一定要多研究，对于信息强迫症，坚决不弃疗。&lt;/p&gt;
 
 &lt;p&gt;PS：抓取&lt;a href=&quot;http://www.toutiao.com/news_hot/&quot;&gt;今日头条&lt;/a&gt;的热点新闻效果应该也挺好，可惜不能被鲜果收录订阅，要再研究研究了。&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -152,8 +634,7 @@ inv = window.setInterval(&quot;if(!t){tra()}else{console.log(txt);window.clearIn
    <link href="/2014/02/24/menu-aim.html"/>
    <updated>2014-02-24T00:00:00+08:00</updated>
    <id>/2014/02/24/menu-aim</id>
-   <content type="html">&lt;h3&gt;0.楔子&lt;/h3&gt;
-
+   <content type="html">&lt;h3 id=&quot;section&quot;&gt;0.楔子&lt;/h3&gt;
 &lt;p&gt;开始分析前，先看两个现实的用户体验栗子：&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;反面教材：&lt;a href=&quot;http://www.zol.com/&quot; title=&quot;中关村商城&quot;&gt;中关村商城&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
@@ -174,15 +655,13 @@ inv = window.setInterval(&quot;if(!t){tra()}else{console.log(txt);window.clearIn
 
 &lt;!--more--&gt;
 
-
-&lt;h3&gt;1.menu-aim简介&lt;/h3&gt;
-
+&lt;h3 id=&quot;menu-aim&quot;&gt;1.menu-aim简介&lt;/h3&gt;
 &lt;p&gt;言归正传，之所以前面两个例子有差异如此大的用户体验，其实就在于这个menu-aim.js上。
 menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别用户鼠标划过菜单的意向并作出相应的处置。&lt;/p&gt;
 
 &lt;p&gt;这类问题最早是依靠timeout或者delay延迟的方法来解决，设置一个时间阀值，鼠标划过时延迟触发来避免误触的情况。menu-aim在这一基础上做了更优的改进，加入了鼠标路径分析，通过读取鼠标位置，&lt;strong&gt;更准确的&lt;/strong&gt;判断用户意图。&lt;/p&gt;
 
-&lt;h3&gt;2.原理分析&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;2.原理分析&lt;/h3&gt;
 
 &lt;p&gt;说穿了其实很简单，如下图所示：&lt;/p&gt;
 
@@ -190,91 +669,86 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 
 &lt;p&gt;图中蓝色三角形左边顶点为鼠标移动前的最后位置，右侧顶点连线为与子菜单之间的边界。menu-aim计算当前鼠标位置，如果在蓝色区域内，说明用户的意图是划向子菜单，则不会触发鼠标移动时划过的其他菜单项。&lt;/p&gt;
 
-&lt;h3&gt;3.核心代码&lt;/h3&gt;
+&lt;h3 id=&quot;section-2&quot;&gt;3.核心代码&lt;/h3&gt;
 
 &lt;pre&gt;
-    //斜率公式
-    function slope(a, b) {
-        return (b.y - a.y) / (b.x - a.x);
-    };
-    
-    var decreasingSlope = slope(loc, decreasingCorner),
-        increasingSlope = slope(loc, increasingCorner),
-        prevDecreasingSlope = slope(prevLoc, decreasingCorner)  ,
-        prevIncreasingSlope = slope(prevLoc, increasingCorner);
+	//斜率公式
+	function slope(a, b) {
+		return (b.y - a.y) / (b.x - a.x);
+	};
+	
+	var decreasingSlope = slope(loc, decreasingCorner),
+		increasingSlope = slope(loc, increasingCorner),
+		prevDecreasingSlope = slope(prevLoc, decreasingCorner)	,
+		prevIncreasingSlope = slope(prevLoc, increasingCorner);
 
-        if (decreasingSlope &amp;lt; prevDecreasingSlope &amp;&amp;
-            increasingSlope &gt; prevIncreasingSlope) {
-            
-        // Mouse is moving from previous location towards the
-        // currently activated submenu. Delay before activating a
-        // new menu row, because user may be moving into submenu.
-        
-        lastDelayLoc = loc;
-        return DELAY;   
+		if (decreasingSlope &amp;lt; prevDecreasingSlope &amp;amp;&amp;amp;
+			increasingSlope &amp;gt; prevIncreasingSlope) {
+			
+		// Mouse is moving from previous location towards the
+		// currently activated submenu. Delay before activating a
+		// new menu row, because user may be moving into submenu.
+		
+		lastDelayLoc = loc;
+		return DELAY;	
 &lt;/pre&gt;
-
 
 &lt;p&gt;分别计算当前（loc）和上一个（lastDelayLoc）鼠标位置与菜单两顶点间连线的斜率，判断当前点是否在上图蓝色三角形内。判断成功，延迟触发事件，该死的子菜单就不会到处乱窜了！&lt;/p&gt;
 
-&lt;h3&gt;4.使用说明&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-3&quot;&gt;4.使用说明&lt;/h3&gt;
 &lt;pre class=&quot;prettyprint lang-html&quot;&gt;
-    @DOM
-    &amp;lt;nav&gt;
-        &amp;lt;ul class=&quot;menu&quot;&gt;
-            &amp;lt;li&gt;
-                &amp;lt;div&gt;主菜单项一&amp;lt;/div&gt;
-                &amp;lt;div&gt;
-                    &amp;lt;ul class=&quot;submenu&quot;&gt;
-                        &amp;lt;li&gt;子菜单项目1&amp;lt;/li&gt;
-                        &amp;lt;li&gt;子菜单项目2&amp;lt;/li&gt;
-                        &amp;lt;li&gt;子菜单项目3&amp;lt;/li&gt;
-                    &amp;lt;/ul&gt;
-                &amp;lt;/div&gt;
-            &amp;lt;/li&gt;
-            &amp;lt;li&gt;
-                &amp;lt;div&gt;主菜单项二&amp;lt;/div&gt;
-                &amp;lt;div&gt;
-                    &amp;lt;ul class=&quot;submenu&quot;&gt;
-                        &amp;lt;li&gt;子菜单项目1&amp;lt;/li&gt;
-                        &amp;lt;li&gt;子菜单项目2&amp;lt;/li&gt;
-                        &amp;lt;li&gt;子菜单项目3&amp;lt;/li&gt;
-                    &amp;lt;/ul&gt;
-                &amp;lt;/div&gt;
-            &amp;lt;/li&gt;
-        &amp;lt;/ul&gt;
-    &amp;lt;/nav&gt;
+	@DOM
+	&amp;lt;nav&amp;gt;
+		&amp;lt;ul class=&quot;menu&quot;&amp;gt;
+			&amp;lt;li&amp;gt;
+				&amp;lt;div&amp;gt;主菜单项一&amp;lt;/div&amp;gt;
+				&amp;lt;div&amp;gt;
+					&amp;lt;ul class=&quot;submenu&quot;&amp;gt;
+						&amp;lt;li&amp;gt;子菜单项目1&amp;lt;/li&amp;gt;
+						&amp;lt;li&amp;gt;子菜单项目2&amp;lt;/li&amp;gt;
+						&amp;lt;li&amp;gt;子菜单项目3&amp;lt;/li&amp;gt;
+					&amp;lt;/ul&amp;gt;
+				&amp;lt;/div&amp;gt;
+			&amp;lt;/li&amp;gt;
+			&amp;lt;li&amp;gt;
+				&amp;lt;div&amp;gt;主菜单项二&amp;lt;/div&amp;gt;
+				&amp;lt;div&amp;gt;
+					&amp;lt;ul class=&quot;submenu&quot;&amp;gt;
+						&amp;lt;li&amp;gt;子菜单项目1&amp;lt;/li&amp;gt;
+						&amp;lt;li&amp;gt;子菜单项目2&amp;lt;/li&amp;gt;
+						&amp;lt;li&amp;gt;子菜单项目3&amp;lt;/li&amp;gt;
+					&amp;lt;/ul&amp;gt;
+				&amp;lt;/div&amp;gt;
+			&amp;lt;/li&amp;gt;
+		&amp;lt;/ul&amp;gt;
+	&amp;lt;/nav&amp;gt;
+&lt;/pre&gt;
+&lt;pre class=&quot;prettyprint lang-js&quot;&gt;	
+	@Options
+	rowSelector: &quot;&amp;gt; li&quot;,  		//要获取的主菜单选项元素
+	submenuSelector: &quot;*&quot;,		//特殊子菜单元素声明
+	submenuDirection: &quot;right&quot;,	//子菜单弹出方位，left, right, above,  below 四种可选
+	tolerance: 75,  			// y轴误差，数字越大，蓝色三角形右边的长度越大
+	enter: $.noop,				//鼠标划入某项时触发的自定义事件
+	exit: $.noop,				//鼠标划出某项时触发的自定义事件
+	activate: $.noop,			//子菜单弹出动作
+	deactivate: $.noop,			//子菜单收回动作
+	exitMenu: $.noop			//移出菜单区域触发
+	
+	@Usage
+	$(&quot;.menu&quot;).menuAim({
+		activate: function(){...},
+		deactivate: function(){...}
+	});
 &lt;/pre&gt;
 
-
-&lt;pre class=&quot;prettyprint lang-js&quot;&gt;   
-    @Options
-    rowSelector: &quot;&gt; li&quot;,        //要获取的主菜单选项元素
-    submenuSelector: &quot;*&quot;,       //特殊子菜单元素声明
-    submenuDirection: &quot;right&quot;,  //子菜单弹出方位，left, right, above,  below 四种可选
-    tolerance: 75,              // y轴误差，数字越大，蓝色三角形右边的长度越大
-    enter: $.noop,              //鼠标划入某项时触发的自定义事件
-    exit: $.noop,               //鼠标划出某项时触发的自定义事件
-    activate: $.noop,           //子菜单弹出动作
-    deactivate: $.noop,         //子菜单收回动作
-    exitMenu: $.noop            //移出菜单区域触发
-    
-    @Usage
-    $(&quot;.menu&quot;).menuAim({
-        activate: function(){...},
-        deactivate: function(){...}
-    });
-&lt;/pre&gt;
-
-
-&lt;h3&gt;5.其他&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-4&quot;&gt;5.其他&lt;/h3&gt;
 &lt;p&gt;相关文章：&lt;a href=&quot;http://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown&quot;&gt;http://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;原版链接：&lt;a href=&quot;https://github.com/kamens/jQuery-menu-aim&quot;&gt;https://github.com/kamens/jQuery-menu-aim&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;个人注释版Demo下载：&lt;a href=&quot;/resouse/attach/jQuery-menu-aim-master.rar&quot;&gt;为性能着想，jquery.menu-aim.js350行将$(document)修改为了具体的钩子元素。&lt;/a&gt;&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -387,7 +861,7 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
    <link href="/2014/02/13/oydFpRule.html"/>
    <updated>2014-02-13T00:00:00+08:00</updated>
    <id>/2014/02/13/oydFpRule</id>
-   <content type="html">&lt;h3&gt;关于本规范&lt;/h3&gt;
+   <content type="html">&lt;h3 id=&quot;section&quot;&gt;关于本规范&lt;/h3&gt;
 
 &lt;p&gt;本规范由前端开发工程师负责编写，服务器端工程师补充完善。&lt;/p&gt;
 
@@ -396,53 +870,42 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 &lt;p&gt;好的可维护性，需要从四个方面下手：&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;代码的松耦合，高度模块化，将页面内的元素视为一个个模块，相互独立，尽量避免耦合过高的代码，从html,css,js三个层面都要考虑模块化。&lt;/li&gt;
-&lt;li&gt;良好的注释与代码风格。&lt;/li&gt;
-&lt;li&gt;结构、样式与行为（html,css,js）高度分离并语义化元素&lt;/li&gt;
-&lt;li&gt;严格按照规范编写代码。&lt;/li&gt;
+  &lt;li&gt;代码的松耦合，高度模块化，将页面内的元素视为一个个模块，相互独立，尽量避免耦合过高的代码，从html,css,js三个层面都要考虑模块化。&lt;/li&gt;
+  &lt;li&gt;良好的注释与代码风格。&lt;/li&gt;
+  &lt;li&gt;结构、样式与行为（html,css,js）高度分离并语义化元素&lt;/li&gt;
+  &lt;li&gt;严格按照规范编写代码。&lt;/li&gt;
 &lt;/ol&gt;
 
-
-&lt;h3&gt;基本准则&lt;/h3&gt;
-
-&lt;p&gt;符合web标准，语义化html，结构（Xhtml）、样式（CSS）、行为（JavaScript）完全分离，兼容性优良。页面性能方面，代码要求简洁明了有序，尽可能的减小服务器负载，保证最快的解析速度。&lt;/p&gt;
-
+&lt;h3 id=&quot;section-1&quot;&gt;基本准则&lt;/h3&gt;
+&lt;p&gt;符合web标准，语义化html，结构（Xhtml）、样式（CSS）、行为（JavaScript）完全分离，兼容性优良。页面性能方面，代码要求简洁明了有序，尽可能的减小服务器负载，保证最快的解析速度。
 &lt;!--more--&gt;
-
-
-&lt;h3&gt;静态页文档结构&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;/resouse/FPmodel.rar&quot;&gt;下载模板文件夹&lt;/a&gt;&lt;/p&gt;
-
+###静态页文档结构
+&lt;a href=&quot;/resouse/FPmodel.rar&quot;&gt;下载模板文件夹&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;
 root/
-    `--index.html           html模板页面
-    |--psd                  存放静态页面原型图
-    |--js                   脚本文件夹
-        `--jquery.js        默认包含jquery1.8.3.min
-        `--common.js        默认包含通用脚本文件
-    |--skins                页面样式文件夹
-        |--images           图标、背景图片文件夹
-        |--ui               js组件样式
-        `--basic.css        默认包含基础样式文件
-        `--common.css       默认包含通用样式文件
-        `--page.css         默认包含页面特有样式文件
-    |--pic                  示例图片文件夹
+	`--index.html           html模板页面
+	|--psd                  存放静态页面原型图
+	|--js                   脚本文件夹
+		`--jquery.js        默认包含jquery1.8.3.min
+		`--common.js        默认包含通用脚本文件
+	|--skins                页面样式文件夹
+		|--images           图标、背景图片文件夹
+		|--ui               js组件样式
+		`--basic.css        默认包含基础样式文件
+		`--common.css       默认包含通用样式文件
+		`--page.css         默认包含页面特有样式文件
+	|--pic                  示例图片文件夹
 &lt;/pre&gt;
 
-
-&lt;h3&gt;命名规则&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-2&quot;&gt;命名规则&lt;/h3&gt;
 &lt;p&gt;1.模块组件化，组件中的class或id名采用骆驼命名法和下划线相结合的方式，单词之间的分隔靠大写字母分开，从属关系靠下划线分隔。例如：&lt;/p&gt;
-
 &lt;pre&gt;
 &amp;lt;ul class=&quot;testList&quot;&amp;gt;
-    &amp;lt;li class=&quot;testList_firstItem&quot;&amp;gt;从属关系，命名使用下划线分隔&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;XXXXXXXXX&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;XXXXXXXXX&amp;lt;/li&amp;gt;
+	&amp;lt;li class=&quot;testList_firstItem&quot;&amp;gt;从属关系，命名使用下划线分隔&amp;lt;/li&amp;gt;
+	&amp;lt;li&amp;gt;XXXXXXXXX&amp;lt;/li&amp;gt;
+	&amp;lt;li&amp;gt;XXXXXXXXX&amp;lt;/li&amp;gt;
 &amp;lt;/ul&amp;gt;
 &lt;/pre&gt;
-
 
 &lt;p&gt;2.命名清晰，不怕命名长，怕命名容易冲突，长命名可以保证不会产生冲突，所以css选择时可以尽量不使用子选择符，也能确保css优先级权重足够低，方便扩展时的覆盖操作。&lt;/p&gt;
 
@@ -452,31 +915,27 @@ root/
 
 &lt;p&gt;5.使用有意义的或通用的ID和class命名：ID和class的命名应反映该元素的功能或使用通用名称，而不要用抽象的晦涩的命名。反映元素的使用目的是首选；使用通用名称代表该元素不表特定意义，与其同级元素无异，通常是用于辅助命名；使用功能性或通用的名称可以更适用于文档或模版变化的情况。&lt;/p&gt;
 
-&lt;h3&gt;HTML初始化&lt;/h3&gt;
-
+&lt;h3 id=&quot;html&quot;&gt;HTML初始化&lt;/h3&gt;
 &lt;p&gt;初始化HTML应包括一下几点，具体见模板index.html文件&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;DTD统一用&amp;lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;。&lt;/li&gt;
-&lt;li&gt;编码使用UTF-8&lt;/li&gt;
-&lt;li&gt;上线互联网产品至少应包括Keywords,description与title&lt;/li&gt;
+  &lt;li&gt;DTD统一用&amp;lt;!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “http://www.w3.org/TR/html4/strict.dtd”&amp;gt;。&lt;/li&gt;
+  &lt;li&gt;编码使用UTF-8&lt;/li&gt;
+  &lt;li&gt;上线互联网产品至少应包括Keywords,description与title&lt;/li&gt;
 &lt;/ol&gt;
 
-
-&lt;h3&gt;HTML规则&lt;/h3&gt;
-
+&lt;h3 id=&quot;html-1&quot;&gt;HTML规则&lt;/h3&gt;
 &lt;p&gt;1.标签语义化，确保在去css后具有良好的可读性&lt;/p&gt;
 
 &lt;p&gt;2.应在保证弹性的基础上尽量减少嵌套层数结构清晰&lt;/p&gt;
 
 &lt;p&gt;3.使用Tab缩进，根元素无缩进&lt;/p&gt;
 
-&lt;p&gt;4.所有编码均遵循xhtml标准, 且所有标签必须闭合, 包括br (&amp;lt;br /&gt;), hr(&amp;lt;hr /&gt;)等；标签属性必须在引号内；所有特殊字符必须编码；所有图片必须包含alt属性；所有链接必需包含title属性。&lt;/p&gt;
+&lt;p&gt;4.所有编码均遵循xhtml标准, 且所有标签必须闭合, 包括br (&amp;lt;br /&amp;gt;), hr(&amp;lt;hr /&amp;gt;)等；标签属性必须在引号内；所有特殊字符必须编码；所有图片必须包含alt属性；所有链接必需包含title属性。&lt;/p&gt;
 
 &lt;p&gt;5.特殊符号使用转码，可参考 &lt;del&gt;&lt;a href=&quot;../resource/webTools/tools.php#d-htmlchar&quot;&gt;常见转义字符&lt;/a&gt; | &lt;a href=&quot;../resource/doc/转义字符.txt&quot;&gt;字符表下载&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
 
-&lt;h3&gt;样式CSS&lt;/h3&gt;
-
+&lt;h3 id=&quot;css&quot;&gt;样式CSS&lt;/h3&gt;
 &lt;p&gt;1.CSS分为三类，通用类、组件类和业务类。通用类包括reset和常用样式的basic.css，专人维护。组件类为js组件关联的样式，置于ui文件夹下；业务类为页面或站点特有样式。&lt;/p&gt;
 
 &lt;p&gt;2.单个CSS文件避免过大（建议少于300行）&lt;/p&gt;
@@ -491,8 +950,7 @@ root/
 
 &lt;p&gt;7。关于书写规则，暂不作特别严格规范。其他CSS的注意事项可以参考 &lt;del&gt;&lt;a href=&quot;#h1-2&quot;&gt;命名规则&lt;/a&gt; | &lt;a href=&quot;#&quot;&gt;常用HACK&lt;/a&gt; | &lt;a href=&quot;#&quot;&gt;其他&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
 
-&lt;h3&gt;行为——Javascript&lt;/h3&gt;
-
+&lt;h3 id=&quot;javascript&quot;&gt;行为——Javascript&lt;/h3&gt;
 &lt;p&gt;1.js分为通用组件库与业务组件，通用组件库由专人维护，并提供详细文档Demo。&lt;/p&gt;
 
 &lt;p&gt;2.开源组件必须保留原作者完整版权信息，并保留官网或说明文档网址&lt;/p&gt;
@@ -509,8 +967,7 @@ root/
 
 &lt;p&gt;8.书写习惯暂不做严格规范。严格缩进，代码结构清晰，注释完整即可。其他可参考&lt;del&gt;&lt;a href=&quot;#h1-2&quot;&gt;命名规则&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
 
-&lt;h3&gt;图片规范&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-3&quot;&gt;图片规范&lt;/h3&gt;
 &lt;p&gt;1.图片主要分为两类：作为背景、图标的样式图片；以及照片等内容图片。&lt;strong&gt;每张图片不得超过50KB&lt;/strong&gt;（2013年中国平均网速375KB/s）&lt;/p&gt;
 
 &lt;p&gt;2.样式图片文件名须有意义&lt;/p&gt;
@@ -521,99 +978,101 @@ root/
 
 &lt;p&gt;5.如果有半透明阴影，使用PNG24无法IE6中显示。除非特别必要，建议原型图中去除阴影并使用PNG8存储，针对IE6HACK&lt;/p&gt;
 
-&lt;p&gt;6.页面通过&amp;lt;img src=&quot;&quot;/&gt;内容图片时，须为其设置尺寸，并以16:9或4:3为最佳&lt;/p&gt;
+&lt;p&gt;6.页面通过&amp;lt;img src=””/&amp;gt;内容图片时，须为其设置尺寸，并以16:9或4:3为最佳&lt;/p&gt;
 
-&lt;p&gt;7.因为背景图总是最后加载，所以作为logo,章节标题的样式图片，必须通过&amp;lt;img src=&quot;&quot;/&gt;导入而不得通过背景图方式。且必须设置文字语义，例如：&lt;/p&gt;
-
+&lt;p&gt;7.因为背景图总是最后加载，所以作为logo,章节标题的样式图片，必须通过&amp;lt;img src=””/&amp;gt;导入而不得通过背景图方式。且必须设置文字语义，例如：&lt;/p&gt;
 &lt;pre&gt;
-&amp;lt;h1&gt;&amp;lt;img src=&quot;logo.png&quot; alt=&quot;东方永德公司&quot;/&gt;&amp;lt;/h1&gt;
-&amp;lt;h2&gt;&amp;lt;img src=&quot;title.png&quot; alt=&quot;公司文化&quot;/&gt;&amp;lt;/h2&gt;
+&amp;lt;h1&amp;gt;&amp;lt;img src=&quot;logo.png&quot; alt=&quot;东方永德公司&quot;/&amp;gt;&amp;lt;/h1&amp;gt;
+&amp;lt;h2&amp;gt;&amp;lt;img src=&quot;title.png&quot; alt=&quot;公司文化&quot;/&amp;gt;&amp;lt;/h2&amp;gt;
 &lt;/pre&gt;
-
 
 &lt;p&gt;8.页面图片过多时，使用lazyLoad组件延迟加载&lt;/p&gt;
 
-&lt;p&gt;9.关于Web上常用的图片设计、格式等内容可参考&lt;del&gt; &lt;a href=&quot;../resource/doc/photo&amp;design.docx&quot;&gt;图片与设计（文档版）&lt;/a&gt; &lt;/del&gt;| &lt;a href=&quot;http://ued.taobao.org/blog/?p=3196&quot;&gt;Web版&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9.关于Web上常用的图片设计、格式等内容可参考&lt;del&gt; &lt;a href=&quot;../resource/doc/photo&amp;amp;design.docx&quot;&gt;图片与设计（文档版）&lt;/a&gt; &lt;/del&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://ued.taobao.org/blog/?p=3196&quot;&gt;Web版&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-&lt;h3&gt;兼容性与测试&lt;/h3&gt;
+&lt;h3 id=&quot;section-4&quot;&gt;兼容性与测试&lt;/h3&gt;
 
 &lt;p&gt;1.浏览器兼容性
 浏览器测试优先级：IE8、Chrome、IE9、IE7、IE6、Firefox。&lt;/p&gt;
 
 &lt;p&gt;因360浏览器、搜狗浏览器、猎豹浏览器通过封装IE、Chrome内核实现，故兼容性不作特殊要求&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;table&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;浏览器&lt;/th&gt;
-            &lt;th&gt;浏览器占比例&lt;/th&gt;
-            &lt;th&gt;支持标准&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tfoot&gt;
-        &lt;tr&gt;
-            &lt;td colspan=&quot;3&quot;&gt;
-                &lt;hr&gt;
-                &lt;code&gt;A级－交互和视觉完全符全设计的要求&lt;/code&gt;&lt;br /&gt;
-                &lt;code&gt;B级－视觉上允许有所差异，但不破坏页面的整体效果&lt;/code&gt;&lt;br /&gt;
-                &lt;code&gt;C级－可忽略设计上的细节，但不防碍使用&lt;/code&gt;
-                &lt;hr&gt;
-                &lt;span class=&quot;note&quot;&gt;数据来源：&lt;a href=&quot;http://tongji.baidu.com/data/browser&quot; title=&quot;2013年3季度浏览器份额&quot;&gt;2013年3季度浏览器份额&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-                &lt;span class=&quot;text note&quot;&gt;&lt;a href=&quot;http://brow.data.cnzz.com/main.php?s=brow&amp;uv=0&amp;type=3&quot;&gt;CNZZ&lt;/a&gt;数据是按浏览器品牌区分而不是内核版本，如360等浏览器使用的依然是IE或Webkit内核，故采用百度统计数据&lt;/span&gt;
-            &lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tfoot&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;IE8.0&lt;/td&gt;
-            &lt;td&gt;33.46%&lt;/td&gt;
-            &lt;td&gt;A&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;chrome&lt;/td&gt;
-            &lt;td&gt;25.25%&lt;/td&gt;
-            &lt;td&gt;A&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;IE6.0&lt;/td&gt;
-            &lt;td&gt;10.92%&lt;/td&gt;
-            &lt;td&gt;B&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;IE9.0&lt;/td&gt;
-            &lt;td&gt;6.43%&lt;/td&gt;
-            &lt;td&gt;A&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;IE7.0&lt;/td&gt;
-            &lt;td&gt;2.97%&lt;/td&gt;
-            &lt;td&gt;B&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;IE10.0&lt;/td&gt;
-            &lt;td&gt;2.54%&lt;/td&gt;
-            &lt;td&gt;B&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Firefox&lt;/td&gt;
-            &lt;td&gt;1.54%&lt;/td&gt;
-            &lt;td&gt;C&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;其他&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-            &lt;td&gt;C&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;浏览器&lt;/th&gt;
+			&lt;th&gt;浏览器占比例&lt;/th&gt;
+			&lt;th&gt;支持标准&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tfoot&gt;
+		&lt;tr&gt;
+			&lt;td colspan=&quot;3&quot;&gt;
+				&lt;hr /&gt;
+				&lt;code&gt;A级－交互和视觉完全符全设计的要求&lt;/code&gt;&lt;br /&gt;
+				&lt;code&gt;B级－视觉上允许有所差异，但不破坏页面的整体效果&lt;/code&gt;&lt;br /&gt;
+				&lt;code&gt;C级－可忽略设计上的细节，但不防碍使用&lt;/code&gt;
+				&lt;hr /&gt;
+				&lt;span class=&quot;note&quot;&gt;数据来源：&lt;a href=&quot;http://tongji.baidu.com/data/browser&quot; title=&quot;2013年3季度浏览器份额&quot;&gt;2013年3季度浏览器份额&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
+				&lt;span class=&quot;text note&quot;&gt;&lt;a href=&quot;http://brow.data.cnzz.com/main.php?s=brow&amp;amp;uv=0&amp;amp;type=3&quot;&gt;CNZZ&lt;/a&gt;数据是按浏览器品牌区分而不是内核版本，如360等浏览器使用的依然是IE或Webkit内核，故采用百度统计数据&lt;/span&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tfoot&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;IE8.0&lt;/td&gt;
+			&lt;td&gt;33.46%&lt;/td&gt;
+			&lt;td&gt;A&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;chrome&lt;/td&gt;
+			&lt;td&gt;25.25%&lt;/td&gt;
+			&lt;td&gt;A&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;IE6.0&lt;/td&gt;
+			&lt;td&gt;10.92%&lt;/td&gt;
+			&lt;td&gt;B&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;IE9.0&lt;/td&gt;
+			&lt;td&gt;6.43%&lt;/td&gt;
+			&lt;td&gt;A&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;IE7.0&lt;/td&gt;
+			&lt;td&gt;2.97%&lt;/td&gt;
+			&lt;td&gt;B&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;IE10.0&lt;/td&gt;
+			&lt;td&gt;2.54%&lt;/td&gt;
+			&lt;td&gt;B&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Firefox&lt;/td&gt;
+			&lt;td&gt;1.54%&lt;/td&gt;
+			&lt;td&gt;C&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;其他&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+			&lt;td&gt;C&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/blockquote&gt;
 
-
 &lt;p&gt;2.分辨率兼容性：以1024X768分辨率为测试基准。无移动端要求的自适应页面，须通过800X600;1024X768;1280X800;1366X768;1440X900测试&lt;/p&gt;
 
-&lt;h3&gt;其他测试与工具&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-5&quot;&gt;其他测试与工具&lt;/h3&gt;
 &lt;p&gt;1.浏览器兼容性：&lt;del&gt;&lt;a href=&quot;../resource/tools/install-ietester-v0.5.2.exe&quot; title=&quot;IETester&quot;&gt;IETester&lt;/a&gt; | &lt;a href=&quot;../resource/tools/install-debugbar-v7.2.exe&quot; title=&quot;IEDebugger&quot;&gt;IEDebugger&lt;/a&gt; &lt;/del&gt;&lt;/p&gt;
 
 &lt;p&gt;2.分辨率兼容性：&lt;del&gt;&lt;a href=&quot;../resource/tools/分辨率test.rar&quot; title=&quot;分辨率test&quot;&gt;分辨率test&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
@@ -624,12 +1083,11 @@ root/
 
 &lt;p&gt;5.页面性能检查：YSlow&lt;/p&gt;
 
-&lt;p&gt;6.CSS格式检查（在线） &lt;a href=&quot;http://csslint.net/&quot;&gt;CSSLint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;6.CSS格式检查（在线） &lt;a href=&quot;http://csslint.net/&quot;&gt;CSSLint&lt;/a&gt; &lt;/p&gt;
 
 &lt;p&gt;7.Javascript格式检查（在线） &lt;a href=&quot;http://www.jslint.com/&quot;&gt;JSLint&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;优化&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-6&quot;&gt;优化&lt;/h3&gt;
 &lt;p&gt;1.CSS内部、外联样式置于页面顶端head标签内；script引入的js文件置于页面最低端&lt;/p&gt;
 
 &lt;p&gt;2.严格限制图片的大小不超过50KB每张，以及图片数量&lt;/p&gt;
@@ -644,27 +1102,20 @@ root/
 
 &lt;p&gt;7.优化工具：&lt;del&gt;&lt;a href=&quot;#&quot; title=&quot;前端工具箱&quot;&gt;前端工具箱&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
 
-&lt;h3&gt;注释要求&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-7&quot;&gt;注释要求&lt;/h3&gt;
 &lt;p&gt;一个项目涉及到多人协作开发，阅读调用公共组件或者他人代码是必不可少的，时间的紧迫性却让程序员没有办法写出详细的说明文档。那么，友善的注释就变得非常重要。&lt;strong&gt;请务必认真对待下面的注释规范，因为我们是一个团队&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h4&gt;HTML注释&lt;/h4&gt;
-
-&lt;p&gt;为方便二次开发套程序，HTML各模块使用注释&amp;lt;!--模块XXX--&gt;分割，详细如下：&lt;/p&gt;
-
+&lt;h4 id=&quot;html-2&quot;&gt;HTML注释&lt;/h4&gt;
+&lt;p&gt;为方便二次开发套程序，HTML各模块使用注释&amp;lt;!–模块XXX–&amp;gt;分割，详细如下：&lt;/p&gt;
 &lt;pre&gt;
-    &amp;lt;!--模块A开始--&gt;
-    &amp;lt;div id=&quot;modelA&quot;&gt;
-        模块A代码...
-    &amp;lt;/div&gt;
-    &amp;lt;!--模块A结束--&gt;
+	&amp;lt;!--模块A开始--&amp;gt;
+	&amp;lt;div id=&quot;modelA&quot;&amp;gt;
+		模块A代码...
+	&amp;lt;/div&amp;gt;
+	&amp;lt;!--模块A结束--&amp;gt;
 &lt;/pre&gt;
-
-
-&lt;h4&gt;CSS注释&lt;/h4&gt;
-
-&lt;p&gt;为便于团队协作，CSS文件头部需要详细注释此文件用途，示例如下：&lt;/p&gt;
-
+&lt;p&gt;####CSS注释
+为便于团队协作，CSS文件头部需要详细注释此文件用途，示例如下：&lt;/p&gt;
 &lt;pre&gt;
 /*
 * 文件用途说明
@@ -672,10 +1123,7 @@ root/
 * 制作日期
 */
 &lt;/pre&gt;
-
-
 &lt;p&gt;若此CSS为内含多个模块样式，以注释区分，示例如下&lt;/p&gt;
-
 &lt;pre&gt;
 /*通用样式*/
 .box{}
@@ -687,40 +1135,34 @@ root/
 .logo{}
 ...
 &lt;/pre&gt;
-
-
-&lt;h4&gt;JS注释&lt;/h4&gt;
-
-&lt;p&gt;为便于团队协作，js各组件须详细注明该组件用途，调用方法，依赖关系，示例如下：&lt;/p&gt;
-
+&lt;p&gt;####JS注释
+为便于团队协作，js各组件须详细注明该组件用途，调用方法，依赖关系，示例如下：&lt;/p&gt;
 &lt;pre&gt;
-    /*
-        Tabs切换 OYDtabs
-        @DOM
-            &amp;lt;div class=&quot;OYDtabs&quot;&gt;
-                &amp;lt;ul&gt;
-                    &amp;lt;li&gt;&amp;lt;a hrdf=&quot;#tabs1&quot;&gt;tabs1&amp;lt;/a&gt;&amp;lt;/li&gt;
-                    &amp;lt;li&gt;&amp;lt;a hrdf=&quot;#tabs2&quot;&gt;tabs2&amp;lt;/a&gt;&amp;lt;/li&gt;
-                    &amp;lt;li&gt;&amp;lt;a hrdf=&quot;#tabs3&quot;&gt;tabs3&amp;lt;/a&gt;&amp;lt;/li&gt;
-                &amp;lt;/ul&gt;
-                &amp;lt;div id=&quot;tabs1&quot;&gt;111&amp;lt;/div&gt;
-                &amp;lt;div id=&quot;tabs2&quot;&gt;222&amp;lt;/div&gt;
-                &amp;lt;div id=&quot;tabs3&quot;&gt;333&amp;lt;/div&gt;
-            &amp;lt;/div&gt;
-        @CSS
-            #OYDsfq li a.OYDtabs-active{background:#7FD2FF;color:#fff}
-        @Usage
-            $(&#39;.OYDtabs&#39;).OYDtabs(options);
-        @Options
-            activeClass     :&#39;OYDsfq-active&#39;,   //tabs标题选中样式名
-            showDiv         :&#39;&#39;,                //显示哪个div，默认为空，显示第一个
-            overOrClick     :&#39;click&#39;,           //触发事件，可以有click、mouseover、dbclick
-            animation       :false,             //是否开启动画效果
-            speed           :&#39;normal&#39;           //渐隐渐现速度，&#39;slow&#39;,&#39;normal&#39;,&#39;fast&#39;，也可以用数值代替，比如2000表示2000毫秒
-    */
+	/*
+		Tabs切换 OYDtabs
+		@DOM
+			&amp;lt;div class=&quot;OYDtabs&quot;&amp;gt;
+				&amp;lt;ul&amp;gt;
+					&amp;lt;li&amp;gt;&amp;lt;a hrdf=&quot;#tabs1&quot;&amp;gt;tabs1&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+					&amp;lt;li&amp;gt;&amp;lt;a hrdf=&quot;#tabs2&quot;&amp;gt;tabs2&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+					&amp;lt;li&amp;gt;&amp;lt;a hrdf=&quot;#tabs3&quot;&amp;gt;tabs3&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;/ul&amp;gt;
+				&amp;lt;div id=&quot;tabs1&quot;&amp;gt;111&amp;lt;/div&amp;gt;
+				&amp;lt;div id=&quot;tabs2&quot;&amp;gt;222&amp;lt;/div&amp;gt;
+				&amp;lt;div id=&quot;tabs3&quot;&amp;gt;333&amp;lt;/div&amp;gt;
+			&amp;lt;/div&amp;gt;
+		@CSS
+			#OYDsfq li a.OYDtabs-active{background:#7FD2FF;color:#fff}
+		@Usage
+			$(&#39;.OYDtabs&#39;).OYDtabs(options);
+		@Options
+			activeClass		:&#39;OYDsfq-active&#39;,	//tabs标题选中样式名
+			showDiv			:&#39;&#39;,				//显示哪个div，默认为空，显示第一个
+			overOrClick		:&#39;click&#39;,			//触发事件，可以有click、mouseover、dbclick
+			animation		:false,				//是否开启动画效果
+			speed			:&#39;normal&#39;			//渐隐渐现速度，&#39;slow&#39;,&#39;normal&#39;,&#39;fast&#39;，也可以用数值代替，比如2000表示2000毫秒
+	*/
 &lt;/pre&gt;
-
-
 
 </content>
  </entry>
@@ -733,6 +1175,7 @@ root/
    <content type="html">&lt;p&gt;历时3天，终于依靠Jekyll在GitHub上成功搭建了第一个Web小窝，期望我能在忙碌的时候，将技术的总结，生活的感悟记录下来。&lt;/p&gt;
 
 &lt;p&gt;这些积累，便是财富了&lt;/p&gt;
+
 </content>
  </entry>
  

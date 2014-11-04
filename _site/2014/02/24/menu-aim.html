@@ -97,12 +97,11 @@
 	<div class="container blog-post">
 		<div class="row">
 			<div class="col-sm-8 blog-main">
-				<h2 class="post-title">
+				<h1 class="post-title">
 					menu-aim.js分析
-				</h2>
+				</h1>
 				<div class="blog-post-content">
-					<h3>0.楔子</h3>
-
+					<h3 id="section">0.楔子</h3>
 <p>开始分析前，先看两个现实的用户体验栗子：</p>
 
 <p><em>反面教材：<a href="http://www.zol.com/" title="中关村商城">中关村商城</a></em></p>
@@ -123,15 +122,13 @@
 
 <!--more-->
 
-
-<h3>1.menu-aim简介</h3>
-
+<h3 id="menu-aim">1.menu-aim简介</h3>
 <p>言归正传，之所以前面两个例子有差异如此大的用户体验，其实就在于这个menu-aim.js上。
 menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别用户鼠标划过菜单的意向并作出相应的处置。</p>
 
 <p>这类问题最早是依靠timeout或者delay延迟的方法来解决，设置一个时间阀值，鼠标划过时延迟触发来避免误触的情况。menu-aim在这一基础上做了更优的改进，加入了鼠标路径分析，通过读取鼠标位置，<strong>更准确的</strong>判断用户意图。</p>
 
-<h3>2.原理分析</h3>
+<h3 id="section-1">2.原理分析</h3>
 
 <p>说穿了其实很简单，如下图所示：</p>
 
@@ -139,91 +136,86 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 
 <p>图中蓝色三角形左边顶点为鼠标移动前的最后位置，右侧顶点连线为与子菜单之间的边界。menu-aim计算当前鼠标位置，如果在蓝色区域内，说明用户的意图是划向子菜单，则不会触发鼠标移动时划过的其他菜单项。</p>
 
-<h3>3.核心代码</h3>
+<h3 id="section-2">3.核心代码</h3>
 
 <pre>
-    //斜率公式
-    function slope(a, b) {
-        return (b.y - a.y) / (b.x - a.x);
-    };
-    
-    var decreasingSlope = slope(loc, decreasingCorner),
-        increasingSlope = slope(loc, increasingCorner),
-        prevDecreasingSlope = slope(prevLoc, decreasingCorner)  ,
-        prevIncreasingSlope = slope(prevLoc, increasingCorner);
+	//斜率公式
+	function slope(a, b) {
+		return (b.y - a.y) / (b.x - a.x);
+	};
+	
+	var decreasingSlope = slope(loc, decreasingCorner),
+		increasingSlope = slope(loc, increasingCorner),
+		prevDecreasingSlope = slope(prevLoc, decreasingCorner)	,
+		prevIncreasingSlope = slope(prevLoc, increasingCorner);
 
-        if (decreasingSlope &lt; prevDecreasingSlope &&
-            increasingSlope > prevIncreasingSlope) {
-            
-        // Mouse is moving from previous location towards the
-        // currently activated submenu. Delay before activating a
-        // new menu row, because user may be moving into submenu.
-        
-        lastDelayLoc = loc;
-        return DELAY;   
+		if (decreasingSlope &lt; prevDecreasingSlope &amp;&amp;
+			increasingSlope &gt; prevIncreasingSlope) {
+			
+		// Mouse is moving from previous location towards the
+		// currently activated submenu. Delay before activating a
+		// new menu row, because user may be moving into submenu.
+		
+		lastDelayLoc = loc;
+		return DELAY;	
 </pre>
-
 
 <p>分别计算当前（loc）和上一个（lastDelayLoc）鼠标位置与菜单两顶点间连线的斜率，判断当前点是否在上图蓝色三角形内。判断成功，延迟触发事件，该死的子菜单就不会到处乱窜了！</p>
 
-<h3>4.使用说明</h3>
-
+<h3 id="section-3">4.使用说明</h3>
 <pre class="prettyprint lang-html">
-    @DOM
-    &lt;nav>
-        &lt;ul class="menu">
-            &lt;li>
-                &lt;div>主菜单项一&lt;/div>
-                &lt;div>
-                    &lt;ul class="submenu">
-                        &lt;li>子菜单项目1&lt;/li>
-                        &lt;li>子菜单项目2&lt;/li>
-                        &lt;li>子菜单项目3&lt;/li>
-                    &lt;/ul>
-                &lt;/div>
-            &lt;/li>
-            &lt;li>
-                &lt;div>主菜单项二&lt;/div>
-                &lt;div>
-                    &lt;ul class="submenu">
-                        &lt;li>子菜单项目1&lt;/li>
-                        &lt;li>子菜单项目2&lt;/li>
-                        &lt;li>子菜单项目3&lt;/li>
-                    &lt;/ul>
-                &lt;/div>
-            &lt;/li>
-        &lt;/ul>
-    &lt;/nav>
+	@DOM
+	&lt;nav&gt;
+		&lt;ul class="menu"&gt;
+			&lt;li&gt;
+				&lt;div&gt;主菜单项一&lt;/div&gt;
+				&lt;div&gt;
+					&lt;ul class="submenu"&gt;
+						&lt;li&gt;子菜单项目1&lt;/li&gt;
+						&lt;li&gt;子菜单项目2&lt;/li&gt;
+						&lt;li&gt;子菜单项目3&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;div&gt;主菜单项二&lt;/div&gt;
+				&lt;div&gt;
+					&lt;ul class="submenu"&gt;
+						&lt;li&gt;子菜单项目1&lt;/li&gt;
+						&lt;li&gt;子菜单项目2&lt;/li&gt;
+						&lt;li&gt;子菜单项目3&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/nav&gt;
+</pre>
+<pre class="prettyprint lang-js">	
+	@Options
+	rowSelector: "&gt; li",  		//要获取的主菜单选项元素
+	submenuSelector: "*",		//特殊子菜单元素声明
+	submenuDirection: "right",	//子菜单弹出方位，left, right, above,  below 四种可选
+	tolerance: 75,  			// y轴误差，数字越大，蓝色三角形右边的长度越大
+	enter: $.noop,				//鼠标划入某项时触发的自定义事件
+	exit: $.noop,				//鼠标划出某项时触发的自定义事件
+	activate: $.noop,			//子菜单弹出动作
+	deactivate: $.noop,			//子菜单收回动作
+	exitMenu: $.noop			//移出菜单区域触发
+	
+	@Usage
+	$(".menu").menuAim({
+		activate: function(){...},
+		deactivate: function(){...}
+	});
 </pre>
 
-
-<pre class="prettyprint lang-js">   
-    @Options
-    rowSelector: "> li",        //要获取的主菜单选项元素
-    submenuSelector: "*",       //特殊子菜单元素声明
-    submenuDirection: "right",  //子菜单弹出方位，left, right, above,  below 四种可选
-    tolerance: 75,              // y轴误差，数字越大，蓝色三角形右边的长度越大
-    enter: $.noop,              //鼠标划入某项时触发的自定义事件
-    exit: $.noop,               //鼠标划出某项时触发的自定义事件
-    activate: $.noop,           //子菜单弹出动作
-    deactivate: $.noop,         //子菜单收回动作
-    exitMenu: $.noop            //移出菜单区域触发
-    
-    @Usage
-    $(".menu").menuAim({
-        activate: function(){...},
-        deactivate: function(){...}
-    });
-</pre>
-
-
-<h3>5.其他</h3>
-
+<h3 id="section-4">5.其他</h3>
 <p>相关文章：<a href="http://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown">http://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown</a></p>
 
 <p>原版链接：<a href="https://github.com/kamens/jQuery-menu-aim">https://github.com/kamens/jQuery-menu-aim</a></p>
 
 <p>个人注释版Demo下载：<a href="/resouse/attach/jQuery-menu-aim-master.rar">为性能着想，jquery.menu-aim.js350行将$(document)修改为了具体的钩子元素。</a></p>
+
 
 				</div>
 				<hr />
@@ -261,6 +253,22 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 					<ol class="list-unstyled">
 						
 						
+						<li><a href="/2014/11/01/learn-backbone.html">Javascript模式 笔记（二） —— 对象与函数的编码模式</a></li>
+						
+						
+						
+						<li><a href="/2014/10/16/learningJs.html">系统学习Javascript</a></li>
+						
+						
+						
+						<li><a href="/2014/10/11/js-patterns-1.html">Javascript模式 笔记（二） —— 对象与函数的编码模式</a></li>
+						
+						
+						
+						<li><a href="/2014/10/11/js-patterns-.html">Javascript模式 笔记（一） —— 概述及基础</a></li>
+						
+						
+						
 						
 						
 						<li><a href="/2014/02/25/myBigdata.html">我的「大数据」挖掘</a></li>
@@ -274,14 +282,6 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 						
 						
 						
-						
-						
-						
-						<li><a href="/2014/02/13/oydFpRule.html">东方永德前端开发规范</a></li>
-						
-						
-						
-						<li><a href="/2014/02/13/HelloWord.html">卷首语</a></li>
 						
 						
 					</ol>
@@ -319,6 +319,18 @@ menu-aim 是一个应用于下拉菜单的jQuery插件。它的作用是识别�
 						<li>
 							<a href="../tags.html#折腾-ref">
 								折腾
+							</a>
+						</li>
+					
+						<li>
+							<a href="../tags.html#笔记-ref">
+								笔记
+							</a>
+						</li>
+					
+						<li>
+							<a href="../tags.html#系统学习JS-ref">
+								系统学习JS
 							</a>
 						</li>
 					
