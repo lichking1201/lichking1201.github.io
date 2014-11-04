@@ -1,0 +1,57 @@
+@charset "utf-8";
+/*CSS reset*/
+body{color:#111;background:#FFF;font-size:12px;font-family:"微软雅黑","宋体";line-height:22px;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,textarea,p,blockquote,th,td,form{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:0;vertical-align: middle;}
+address,caption,th{font-style:normal;font-weight:normal;}
+em,strong{font-style:bold;}
+ol,ul{list-style:none;}caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,textarea,select{*font-size:100%;}
+input{border:1px solid #111;vertical-align:middle}
+label{vertical-align:middle}
+.clear{clear: both;content: "";display: block;height: 0;overflow: hidden;visibility: hidden;}
+/*浮动父元素插入类清浮动*/
+.clearfix:after {clear: both;content: "";display: block;height: 0;overflow: hidden;visibility: hidden;}
+header{height:77px;width:100%}
+header div{width:1000px;margin:0 auto}
+header img{margin-left:0px}
+.banner{background:#111;height:480px;width:100%;padding-top:30px}
+
+.focus{width:1000px;height:450px;overflow:hidden;margin:0 auto;position:relative;}
+
+
+.btn{width:50px;height:103px;display:block;position:absolute;top:50%;margin-top:-50px;cursor:pointer;z-index:9999}
+.pre{left:20px;background:url(images/arrow_l.png) no-repeat 0 3px}
+.next{right:20px;background:url(images/arrow_r.png) no-repeat 0 3px;}
+
+.focus img{position:absolute;top:0;left:0;display:none}
+.thumbs{padding:15px 0 30px;background:#f2f2f2;overflow:hidden}
+.imgList{text-align:center;width:1000px;margin:0 auto}
+.imgList li{margin-top:20px;position:relative;float:left;margin-right:13.33px;display:inline;height:150px;cursor:pointer;}
+.fancybox img{border-radius:5px;box-shadow: 5px 5px 3px #888888;}
+section:nth-child(4) .fancybox img{box-shadow: 5px 5px 3px #333;}
+.imgList{margin-top:-10px}
+.imgList li:nth-child(4n+0){margin-right:0}
+.imgList li span{height:42px;line-height:42px;background:rgba(17,17,17,0.9);position:absolute;bottom:0;left:0;right:0;display:none;color:#eee;background:#eee \9}
+
+.about{padding:15px;background:#f2f2f2}
+.about div{width:1000px;margin:0 auto;color:#898989;font-size:12px;line-height:20px}
+
+h2{line-height:40px;font-size:18px;color:#DB2273;width:1000px;margin:0 auto}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>
+		
+            Javascript模式 笔记（二） —— 对象与函数的编码模式
+              
+	</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="lichen">
+	<meta name="description" content="对原书第3、4、5、6核心章节提炼，主要讲述使用Js如何优雅的创建函数与对象">
+	<meta name="keywords" content="js" />
+	<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/css/prettify.css" rel="stylesheet">
+	<link href="/themes/blog/blog.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+		<script src="/js/ie8-responsive-file-warning.js">
+		</script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+		</script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+		</script>
+	<![endif]-->
+</head>
+
+<body id="backtop">
+	<div class="blog-masthead">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">
+					<span class="sr-only">导航</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			
+			
+			<nav class="collapse navbar-collapse blog-nav" id="nav">
+				<ul class="nav navbar-nav">
+				
+				
+				
+					<li class="">
+						<a class="blog-nav-item" href="/index.html">
+							首页
+						</a>
+					</li>
+				
+				
+				
+				
+					<li class="">
+						<a class="blog-nav-item" href="/archive.html">
+							文章归档
+						</a>
+					</li>
+				
+				
+				
+				
+					<li class="">
+						<a class="blog-nav-item" href="/tags.html">
+							标签
+						</a>
+					</li>
+				
+				
+				
+				
+					<li class="">
+						<a class="blog-nav-item" href="/assa.html">
+							ASSA
+						</a>
+					</li>
+				
+				
+				
+				
+					<li class="">
+						<a class="blog-nav-item" href="https://github.com/lichking1201/lichking1201.github.io">
+							博客源代码
+						</a>
+					</li>
+				
+				
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="container blog-post">
+		<div class="row">
+			<div class="col-sm-8 blog-main">
+				<h1 class="post-title">
+					Javascript模式 笔记（二） —— 对象与函数的编码模式
+				</h1>
+				<div class="blog-post-content">
+					<h2 id="section">字面量和构造函数</h2>
+
+<p>在Javascript中可以使用字面量(Literal notation)模式，这种方法更为准确，也更富有表现力，并且在对象定义中更不容易出错。为此，我们应避免使用构造函数，更建议使用字面量的方法。</p>
+
+<h3 id="section-1">对象字面量</h3>
+
+<p>关键词：键-值对（key-value pari）哈希表；属性(property)；方法(method)</p>
+
+<p>空对象添加法示例</p>
+
+<pre><code>  // 开始时定义一个空对象
+  var dog = {};
+  
+  // 添加属性方法
+  dog.name = "foo dog";
+  dog.getName = function(){
+     return dog.name;
+  }
+
+  // 完全删除属性/方法
+  delete dog.name;
+</code></pre>
+
+<p>创建对象初始化法示例</p>
+
+<pre><code>  var dog = {
+     name: "foo dog",
+     getName: function(){
+        return this.name  
+     }
+  };
+
+  // 反模式，使用内置构造函数
+  var dog = new Object();
+  dog.name = "bad dog";
+</code></pre>
+
+<p>与构造函数相比，使用字面量表示法的优点除了字符更少，另一个原因是他强调了该对象仅是一个可变哈希映射，而不是从对象中提取的属性或者方法。此外，字面量法被创造时并没有作用于解析。使用构造函数创造某同名局部变量时，解释器需要从调用Object()的位置开始一直向上查询作用域链，直到发现全局object构造函数。</p>
+
+<p>构造函数的一个“特性”是object构造函数仅接受一个参数，并且还依赖传递的值，该Object()可能委派另一个内置构造函数来创建对象，并返回了一个并非期望的不同对象。</p>
+
+<pre><code>  // 反模式
+  var o = new Object();
+  console.log(o.constrctor === Object); // true
+  
+  var o = new Object(1);
+  console.log(o.constrctor === Number); // true
+  console.log(o.toFixed(2)) // "1.00"
+  
+  var o = new Object("n");
+  console.log(o.constrctor === String); // true
+  // 一般对象没有此方法，但字符串对象都有
+  console.log(typeof o.substring) // "function"
+  
+  var o = new Object(true);
+  console.log(o.constrctor === Boolean); // true
+</code></pre>
+
+<p>当传递给Object()构造函数的值是动态的，并且直到运行时才能确定其类型时，Object()构造函数的这种行为可能会导致意想不到的后果。因此，总的还说，不要new构造函数，相反应该使用更为简单、可靠的对象字面量模式。</p>
+
+<h3 id="section-2">自定义构造函数</h3>
+<p>除内置构造函数和对象字面量模式外，还可以使用自己的构造函数来创建对象</p>
+
+<pre><code>  var Person = function(name){
+     // 使用对象字面量模式创建一个新对象
+     //var this = {}
+     this.name = name;
+     this.say = function(){
+        return "我是" + this.name;
+     }
+
+     // return this
+  }
+
+  var lich = new Person("dragoon")
+  lich.say() //"我是dragoon"
+</code></pre>
+
+<p>当以new操作符调用构造函数时，函数内部会发生以下情况（上方源码注释部分为模拟）：</p>
+
+<ul>
+  <li>创建一个空对象，并且this变量引用了该对象，同时还继承了该函数的原型。</li>
+  <li>属性和方法加入到this引用的对象中。</li>
+  <li>新建的对象由this所引用，并且最后隐式的返回this</li>
+</ul>
+
+
+				</div>
+				<hr />
+				<p class="post-meta">
+					tags:
+					
+					<a href="/tags.html#前端-ref">前端</a>&ensp;
+					
+					<a href="/tags.html#js-ref">js</a>&ensp;
+					
+					<a href="/tags.html#笔记-ref">笔记</a>&ensp;
+					
+					&emsp;<time pubdate="2014-10-11">2014-10-11</time>
+				</p>
+				<!-- Duoshuo Comment BEGIN -->
+				<div class="ds-thread"></div>
+				<script type="text/javascript">
+					var duoshuoQuery = {short_name:"lichking1201"};
+					(function() {
+						var ds = document.createElement('script');
+						ds.type = 'text/javascript';ds.async = true;
+						ds.src = 'http://static.duoshuo.com/embed.js';
+						ds.charset = 'UTF-8';
+						(document.getElementsByTagName('head')[0] 
+						|| document.getElementsByTagName('body')[0]).appendChild(ds);
+					})();
+				</script>
+			<!-- Duoshuo Comment END -->
+			</div>
+			<!--/.blog-main-->
+			
+			<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+				<div class="sidebar-module">
+					<h4>
+						最新
+					</h4>
+					<ol class="list-unstyled">
+						
+						
+						<li><a href="/2014/11/01/learn-backbone.html">Javascript模式 笔记（二） —— 对象与函数的编码模式</a></li>
+						
+						
+						
+						<li><a href="/2014/10/16/learningJs.html">系统学习Javascript</a></li>
+						
+						
+						
+						<li><a href="/2014/10/11/js-patterns-1.html">Javascript模式 笔记（二） —— 对象与函数的编码模式</a></li>
+						
+						
+						
+						<li><a href="/2014/10/11/js-patterns-.html">Javascript模式 笔记（一） —— 概述及基础</a></li>
+						
+						
+						
+						
+						
+						<li><a href="/2014/02/25/myBigdata.html">我的「大数据」挖掘</a></li>
+						
+						
+						
+						<li><a href="/2014/02/24/menu-aim.html">menu-aim.js分析</a></li>
+						
+						
+						
+						
+						
+						
+						
+						
+					</ol>
+				</div>
+				<div class="sidebar-module">
+					<h4>
+						标签
+					</h4>
+					<ol class="list-unstyled">
+					
+						<li>
+							<a href="../tags.html#生活-ref">
+								生活
+							</a>
+						</li>
+					
+						<li>
+							<a href="../tags.html#前端-ref">
+								前端
+							</a>
+						</li>
+					
+						<li>
+							<a href="../tags.html#文档-ref">
+								文档
+							</a>
+						</li>
+					
+						<li>
+							<a href="../tags.html#js-ref">
+								js
+							</a>
+						</li>
+					
+						<li>
+							<a href="../tags.html#折腾-ref">
+								折腾
+							</a>
+						</li>
+					
+						<li>
+							<a href="../tags.html#笔记-ref">
+								笔记
+							</a>
+						</li>
+					
+						<li>
+							<a href="../tags.html#系统学习JS-ref">
+								系统学习JS
+							</a>
+						</li>
+					
+					</ol>
+				</div>
+				<div class="sidebar-module">
+					<h4>
+						我在
+					</h4>
+					<ol class="list-unstyled">
+						<li>
+							<a href="https://github.com/lichking1201" target="_blank">
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="http://www.zhihu.com/people/li-chen-32" target="_blank">
+								知乎
+							</a>
+						</li>
+					</ol>
+				</div>
+			</div>
+			<!--/.blog-sidebar-->
+		</div>
+		<!--/.row-->
+	</div>
+	<!--/.container-->
+	<div class="blog-footer">
+		<p>
+			© 2014 lichking. with Help from <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>,<a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap</a> and <a href="https://github.com" target="_blank">GitHub</a>.
+		</p>
+		<p>
+			<a href="#backtop">
+				Back to top
+			</a>
+		</p>
+	</div>
+	<!--Bootstrap core JavaScript==================================================-
+	-><!--Placed at the end of the document so the pages load faster-->
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js">
+	</script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/prettify.js"></script>
+ 	<script src="/assets/js/docs.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+			prettyPrint();
+			
+			$('a[href^="http"]').each(function(){
+				$(this).attr("target","_blank")
+			})
+		});
+	</script>   
+</body>
+</html>
