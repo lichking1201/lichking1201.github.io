@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- manifest="research.appcache" -->
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="bower_components/normalize/normalize.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="researchAPP" class="page">
+		<div id="currentPage" class="">
+			
+		</div>
+		<div id="questionPage" class="">
+			<header>
+				<h2>问卷设置</h2>
+				<div><input type="text" id="newQuestion" placeholder="请输入新问题" class="newQuestion"></div>
+				<div id="questionType" class="questionType hidden">
+					<div id="choseType" class="choseType">
+						<span class="typeOpt" data-type="text">文本</span>
+						<span class="typeOpt on" data-type="radio">单选</span>
+						<span class="typeOpt" data-type="checkbox">多选</span>
+					</div>
+					<div id="optsArea" class="optsArea">
+						<textarea name="" id="opts" placeholder="请键入各个选项，以回车间隔" ></textarea>					
+					</div>
+					<div class="btns">
+						<span id="resetQuestion" class="btn cancle">取消</span>
+						<span type="button" id="addQuestion" class="btn cancle">确认</span>
+					</div>
+				</div>
+			</header>
+			<section id="main" style="display: none">
+				<h2>问卷预览</h2>
+				<ol id="questionList" class="questionList"></ol>
+				<div class="btns">
+					<a type="button" id="clearQuestion" class="btn cancle">清除</a>
+				</div>
+			</section>
+		</div>
+
+		<footer>
+			<label class="mainMenu" for="mainMenu">Menu</label>
+			<input type="checkbox" class="hidden" id="mainMenu">
+			<ul class="subMenu">
+				<li class="subMenu1"><a href="">创建</a></li>
+				<li class="subMenu2"><a href="">调查</a></li>
+				<li class="subMenu3"><a href="">管理</a></li>
+			</ul>
+			<div class="footline">
+				<div class="line"></div>
+			</div>
+		</footer>
+
+	</div>
+	
+	
+	<script type="text/template" id="item-template">
+	    <a class="btn cancle destroy">x</a>
+	    <div class="view">
+			<label><%- title %></label>
+		</div>
+		<div class="viewOpt">
+			<% _.each(opts, function(opt,index) { %>
+				<input type="<%- type %>" name="<%- belong + id %>" disabled><span><%= opt %></span>
+			<% }) %>
+		</div>
+		<input type="text" class="edit" value="<%- title %>">
+		<textarea name="" id="opts" class="editOpt"><% _.each(opts, function(opt,index) { if(index!=opts.length - 1) opt = opt + "\n" %><%- opt %><% }) %></textarea>
+	</script>
+
+
+	<!--<span><%= "&#" + (index + 65) + ". " + opt %></span>-->
+
+	
+	<script src="bower_components/zepto/zepto.min.js"></script>
+	<script src="bower_components/underscore/underscore-min.js"></script>
+	<script src="bower_components/backbone/backbone.js"></script>
+	<script src="backbone.localStorage-min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

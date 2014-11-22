@@ -5,8 +5,8 @@
         <description>Dragoon - lichen</description>
         <link></link>
         <link></link>
-        <lastBuildDate>2014-11-05T01:10:13+08:00</lastBuildDate>
-        <pubDate>2014-11-05T01:10:13+08:00</pubDate>
+        <lastBuildDate>2014-11-05T16:59:39+08:00</lastBuildDate>
+        <pubDate>2014-11-05T16:59:39+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -17,19 +17,20 @@
   &lt;li&gt;姓名：李晨&lt;/li&gt;
   &lt;li&gt;毕业院校：华中科技大学2012本科&lt;/li&gt;
   &lt;li&gt;所学专业：信息安全&lt;/li&gt;
+  &lt;li&gt;联系方式：530011742@qq.com 加好友或邮件皆可&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;section-1&quot;&gt;专业技能&lt;/h3&gt;
 &lt;ol&gt;
-  &lt;li&gt;熟练使用 HTML、CSS 像素级实现页面原型&lt;/li&gt;
+  &lt;li&gt;熟练使用 HTML、CSS 像素级实现响应式页面原型&lt;/li&gt;
   &lt;li&gt;熟悉 Sass、Compass 高效优雅的组织样式&lt;/li&gt;
-  &lt;li&gt;掌握 Javascript 及 JQuery 实现高性能的动态页面效果&lt;/li&gt;
+  &lt;li&gt;掌握 Javascript 及 JQuery 实现高性能的页面动态效果&lt;/li&gt;
   &lt;li&gt;较丰富的移动Web开发经验，熟练运用CSS3、HTML5的新特性&lt;/li&gt;
   &lt;li&gt;掌握 Ajax 及 JSON，可以熟练处理页面数据及展示逻辑&lt;/li&gt;
   &lt;li&gt;熟悉前端 MVC 模式，使用 Backbone、underscore 更好的组织前端代码&lt;/li&gt;
   &lt;li&gt;了解并运用过 Yeoman、F.I.S、grunt 等前端构建工具，工程化前端开发流程&lt;/li&gt;
   &lt;li&gt;熟悉git及svn代码管理&lt;/li&gt;
-  &lt;li&gt;使用过BootStrap JQueryUI GMU 等UI框架，能够依据项目快速本地化&lt;/li&gt;
+  &lt;li&gt;熟悉BootStrap JQueryUI GMU 等UI框架的使用，能够依据项目快速本地化&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;section-2&quot;&gt;工作履历&lt;/h3&gt;
@@ -71,16 +72,13 @@
     &lt;p&gt;&lt;a href=&quot;http://www.lvye.cn&quot;&gt;绿野网社区首页&lt;/a&gt; 首页 Yeoman + Sass&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.lvye.com/trip/2881/&quot;&gt;绿野旅行&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.lvye.com/trip/2881/&quot;&gt;绿野旅行&lt;/a&gt; 详情页面前端开发&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;http://keypark.org/&quot;&gt;开园国际&lt;/a&gt; 整站&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://artnews.fotosay.com/Orgin/index.shtml&quot;&gt;图说天下&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;[]&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://artnews.fotosay.com/Orgin/index.shtml&quot;&gt;图说天下&lt;/a&gt; 整频道改版&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -91,13 +89,13 @@
     &lt;p&gt;&lt;a href=&quot;http://lichking1201.github.io&quot;&gt;个人博客&lt;/a&gt; jekyll+bootstrap+github&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://lichking1201.github.io/demo/race/&quot;&gt;赛车小游戏&lt;/a&gt; html5+canvas&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://lichking1201.github.io/demo/race/&quot;&gt;赛车小游戏&lt;/a&gt; html5+canvas（请使用移动端访问）&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;&quot;&gt;Web调查系统&lt;/a&gt; 离线WebAPP&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://lichking1201.github.io/demo/researchAPP/&quot;&gt;Web调查系统&lt;/a&gt; 离线WebAPP(请使用移动端访问)&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://lichking1201.github.io/demo/metroSplit/&quot;&gt;磁铁菜单&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://lichking1201.github.io/demo/metroSplit/&quot;&gt;磁铁菜单&lt;/a&gt; metro大色块菜单的插件&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -107,10 +105,17 @@
         </item>
 
         <item>
-                <title>Backbone 学习</title>
-                <description>&lt;h2 id=&quot;section&quot;&gt;模型&lt;/h2&gt;
+                <title>Backbone 使用总结</title>
+                <description>&lt;p&gt;待续
+## 模型&lt;/p&gt;
 
-&lt;p&gt;模型是保存应用程序数据的地方。可以把模型想象为对应用程序原始数据的精心设计的抽象，&lt;/p&gt;
+&lt;p&gt;模型是保存应用程序数据的地方。可以把模型想象为对应用程序原始数据的精心设计的抽象&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;集合&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;模板&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;路由&lt;/h2&gt;
 
 </description>
                 <link>/2014/11/01/learn-backbone.html</link>
