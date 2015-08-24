@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="console"></div>
+    <textarea id="in"></textarea>
+    <iframe id="output"></iframe>
+    <script src="jquery.min.js"></script>
+    <script src="algorithm.js"></script>
+    <script type="text/javascript">
+        $("#in").keyup(function(){
+            var js = $(this).val()
+            var scope = document.getElementById("output").contentWindow
+            if(scope.document.body) scope.document.body.innerHTML = ""
+            scope.eval(js)
+        })
+
+        var printf = function(str){
+            $("#console").append(str + "<br>")
+        }
+    </script>
+    <script type="text/javascript">
+        function Hero(name){
+            this.name = name
+        }
+        function Equipment(name, description){
+            this.name = name
+            this.description = description
+        }
+
+        var hero = new Hero("lich")
+        var heroBag = new List()
+
+        var awards = ["治疗药剂", "体力药剂", "粗糙的水晶剑", "锋利的卓越之剑"]
+    </script>
+</body>
+</html>
