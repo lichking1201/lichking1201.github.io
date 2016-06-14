@@ -460,15 +460,7 @@ h2, h3 {
 .content p {
   margin: 0;
 }
-.loading {
-  position: fixed;
-  z-index: 999999;
-  background: #fff;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
+
 .content .en {
   color: #0b8bde;
   font-size: 1.4rem;
